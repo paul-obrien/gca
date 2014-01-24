@@ -22,15 +22,15 @@ def get_connection():
     else:
         return cnx
     
-def get_college_id(cnx, college):
-    query = ("SELECT id FROM college where name = %s")
+def get_college(cnx, college):
+    query = ("SELECT id, athletic_staff_url FROM college where name = %s")
     print (query)
     print (college)
     cursor = cnx.cursor()
     cursor.execute(query, (college,))
     fetched = cursor.fetchone()
     cursor.close()
-    return fetched[0]
+    return fetched
 
 def get_sport_id(cnx, sport):
     query = ("SELECT id FROM sport where name = %s")
@@ -40,7 +40,7 @@ def get_sport_id(cnx, sport):
     cursor.close()
     return fetched[0]
 
-def save_coach(cnx, college_id, sport_id, name, title, phone, email):
+def save_coach(cnx, college_id, sport_id, name, title, phone, email, profile_url=None):
     print("TRYING TO SAVE A COACH")
     cursor = cnx.cursor()
     query_for_coach = ("SELECT id FROM coach where college = %s AND sport = %s AND name = %s")
@@ -50,13 +50,13 @@ def save_coach(cnx, college_id, sport_id, name, title, phone, email):
 
     if coach_id:
         print ("UPDATING A COACH")
-        query = ("UPDATE coach SET title = %s, phone = %s, email = %s WHERE id = %s")
-        cursor.execute(query, (title, phone, email, id))
+        query = ("UPDATE coach SET title = %s, phone = %s, email = %s, profile_url = %s WHERE id = %s")
+        cursor.execute(query, (title, phone, email, profile_url, coach_id))
     else:
-        print ("ADDING A COACH: %s, %s, %s, %s, %s, %s" % (college_id, sport_id, name, title, phone, email))
-        query = ("INSERT INTO coach(college, sport, name, title, phone, email) "
-                 "VALUES (%s, %s, %s, %s, %s, %s)")
-        cursor.execute(query, (college_id, sport_id, name, title, phone, email))
+        print ("ADDING A COACH: %s, %s, %s, %s, %s, %s, %s" % (college_id, sport_id, name, title, phone, email, profile_url))
+        query = ("INSERT INTO coach(college, sport, name, title, phone, email, profile_url) "
+                 "VALUES (%s, %s, %s, %s, %s, %s, %s)")
+        cursor.execute(query, (college_id, sport_id, name, title, phone, email, profile_url))
         
     cnx.commit()
     cursor.close()

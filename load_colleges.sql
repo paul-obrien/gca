@@ -1,0 +1,1 @@
+insert into college(name, athletic_staff_url) values ('New Hampshire', 'http://www.unhwildcats.com/athleticsDept/directory/index');
