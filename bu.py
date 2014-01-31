@@ -1,7 +1,6 @@
 from pyquery import PyQuery as pq
-import db
+import scraper
 import constants
-from urllib.parse import urljoin
 
 bu_sports = {"mbb" : constants.MENS_BASKETBALL, "wbb" : constants.WOMENS_BASKETBALL,
              "mcrew" : constants.MENS_CREW,
@@ -17,40 +16,15 @@ bu_sports = {"mbb" : constants.MENS_BASKETBALL, "wbb" : constants.WOMENS_BASKETB
              "wten" : constants.WOMENS_TENNIS, "wr" : constants.WRESTLING}
 
 print ("Scraping BU")
-cxn = db.get_connection()
-college = db.get_college(cxn, "Boston University")
+cxn = scraper.get_connection()
+college = scraper.get_college(cxn, "Boston University")
 d = pq(url=college[1])
 for key, sport in bu_sports.items():
     print (sport);
     anchor = d('a[name="' + key + '"]')
     info_row = anchor.parent().parent().next()
     while info_row.attr("style") == None:
-        i = 0
-        info = []
-        profile_url = ''
-        for field in info_row.children():
-            if i == 0 or i == 2:
-                for link in field:
-                    if not link.text or link.text.startswith("a href") or link.text.startswith("!"):
-                        continue
-                    info.append(link.text.rstrip() if link.text else None)
-                    if i == 0:
-                        profile_url = link.get("href")
-                        if profile_url and not profile_url.startswith('http'):
-                            profile_url = urljoin(college[1], profile_url)
-                            
-            elif i == 1 or i == 3:
-                info.append(field.text.rstrip() if field.text else None)
-                
-            i = i + 1
-        if len(info) > 3:
-            email = (info[2] + "@bu.edu") if info[2] else None
-            if isinstance(sport, list):
-                for sp in sport:
-                    db.save_coach(cxn, college[0], db.get_sport_id(cxn, sp), info[0], info[1], info[3], email, profile_url)
-            else:
-                db.save_coach(cxn, college[0], db.get_sport_id(cxn, sport), info[0], info[1], info[3], email, profile_url)
-        
+        scraper.parse_row(cxn, college[0], college[1], sport, info_row.children(), ["name", "title", "email", "phone"], "@bu.edu")        
         info_row = info_row.next()
 
-db.close_connection(cxn)
+scraper.close_connection(cxn)
