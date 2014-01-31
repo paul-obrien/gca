@@ -8,7 +8,7 @@ sports = {"m-basebl" : constants.BASEBALL, "m-baskbl" : constants.MENS_BASKETBAL
              "m-golf" : constants.MENS_GOLF, "w-golf" : constants.WOMENS_GOLF,
              "m-ihockey" : constants.MENS_ICE_HOCKEY, "w-ihockey" : constants.WOMENS_ICE_HOCKEY,
              "w-lax" : constants.WOMENS_LACROSSE,
-             "w-row" : constants.WOMENS_CREW, "sail" : constants.SAILING, "skiing": [constants.MENS_SKIING, constants.WOMENS_SKIING],
+             "w-row" : constants.WOMENS_ROWING, "sail" : constants.SAILING, "skiing": [constants.MENS_SKIING, constants.WOMENS_SKIING],
              "m-soccer" : constants.MENS_SOCCER,
              "w-soccer" : constants.WOMENS_SOCCER, "softbl" : constants.SOFTBALL,
              "swim" : [constants.MENS_SWIMMING_DIVING, constants.WOMENS_SWIMMING_DIVING],

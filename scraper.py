@@ -87,22 +87,30 @@ def parse_cell_content(info, cell_content, field_name, sub_field_names=None, spl
             info[fn] = strip_string(values[i])
             i = i + 1
     else:
-        info[field_name] = strip_string(cell_content.text)
+        # Check for a "mailto" link
+        if field_name == "email" and cell_content.get("href") and cell_content.get("href").startswith("mailto:"):
+            info[field_name] = cell_content.get("href")[7:]
+        else:               
+            info[field_name] = strip_string(cell_content.text)
     
-def parse_row(cxn, college, base_url, sport, elements, field_names, email_extension=None):
+def parse_row(cxn, college, base_url, sport, elements, field_names, custom_function=None, custom_param=None):
     i = 0
     info = {}
     profile_url = ""
     for field in elements:
         field_name = field_names[i]
+        if not field_name:
+            i = i + 1
+            continue
         split_string = None
         sub_field_names = None
         if isinstance(field_name, tuple):
           sub_field_names = field_name[0]
           split_string = field_name[1]
-        if field.getchildren():
+        if not field.text and field.getchildren():
             for link in field:
-                if not link.text or link.text.startswith("a href") or link.text.startswith("!"):
+                if (not link.text or link.text.startswith("a href") or link.text.startswith("!")) and\
+                   not (field_name == "email" and link.get("href")):
                     continue
                 parse_cell_content(info, link, field_name, sub_field_names, split_string)
                 if field_name == "name":
@@ -116,8 +124,8 @@ def parse_row(cxn, college, base_url, sport, elements, field_names, email_extens
         if i >= len(field_names):
             break
     if 'name' in info and info['name']:
-        if 'email' in info and info['email'] and email_extension:
-            info['email'] = info['email'] + email_extension 
+        if custom_function:
+            custom_function(info, custom_param)
         for field_name in field_name_list(field_names):
            if field_name not in info:
                info[field_name] = None
@@ -127,3 +135,6 @@ def parse_row(cxn, college, base_url, sport, elements, field_names, email_extens
         else:
             save_coach(cxn, college, get_sport_id(cxn, sport), info['name'], info['title'], info['phone'], info['email'], profile_url)
 
+def add_area_code(info, area_code):
+    if 'phone' in info and info['phone'] and area_code:
+        info['phone'] = area_code + " " + info['phone']

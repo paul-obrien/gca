@@ -17,11 +17,9 @@ for key, sport in sports.items():
     print (sport);
     header = d('strong:contains("' + key + '")').filter(lambda i, this: this.text.startswith(key))
     info_row = header.parent().parent().next()
-    print(info_row)
     while info_row.children().length > 1 and info_row.children().length < 4:
         scraper.parse_row(cxn, college[0], college[1], sport, info_row.children(), [(["name", "title"], ","), "email", "phone"])
         info_row = info_row.next()
-        print (info_row)
 
 scraper.close_connection(cxn)
 
