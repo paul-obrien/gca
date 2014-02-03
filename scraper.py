@@ -2,6 +2,7 @@
 import mysql.connector
 from mysql.connector import errorcode
 from urllib.parse import urljoin
+from pyquery import PyQuery as pq
 
 config = {
     'user' : 'fpuser',
@@ -66,7 +67,7 @@ def close_connection(cnx):
 def field_name_list(field_names):
     field_name_list = []
     for field_name in field_names:
-        if isinstance(field_name, tuple):
+        if isinstance(field_name, tuple) or isinstance(field_name, list):
             for fn in field_name[0]:
                 field_name_list.append(fn)
         else:
@@ -86,6 +87,14 @@ def parse_cell_content(info, cell_content, field_name, sub_field_names=None, spl
         for fn in sub_field_names:
             info[fn] = strip_string(values[i])
             i = i + 1
+    elif sub_field_names:
+        # Name and email in the same cell
+        print(cell_content)
+        if cell_content.get("href"):
+            info['email'] = cell_content.get("href")[7:]
+        else:
+            info['email'] = ""
+        info['name'] = cell_content.text
     else:
         # Check for a "mailto" link
         if field_name == "email" and cell_content.get("href") and cell_content.get("href").startswith("mailto:"):
@@ -104,6 +113,8 @@ def parse_row(cxn, college, base_url, sport, elements, field_names, custom_funct
             continue
         split_string = None
         sub_field_names = None
+        if isinstance(field_name, list):
+          sub_field_names = field_name
         if isinstance(field_name, tuple):
           sub_field_names = field_name[0]
           split_string = field_name[1]
@@ -113,7 +124,7 @@ def parse_row(cxn, college, base_url, sport, elements, field_names, custom_funct
                    not (field_name == "email" and link.get("href")):
                     continue
                 parse_cell_content(info, link, field_name, sub_field_names, split_string)
-                if field_name == "name":
+                if field_name == "name" or (isinstance(field_name, tuple) and "name" in field_name[0]):
                     profile_url = link.get("href")
                     if profile_url and not profile_url.startswith('http'):
                         profile_url = urljoin(base_url, profile_url)
@@ -134,6 +145,39 @@ def parse_row(cxn, college, base_url, sport, elements, field_names, custom_funct
                 save_coach(cxn, college, get_sport_id(cxn, sp), info['name'], info['title'], info['phone'], info['email'], profile_url)
         else:
             save_coach(cxn, college, get_sport_id(cxn, sport), info['name'], info['title'], info['phone'], info['email'], profile_url)
+
+def scrape_asp_site(college_name, sports):
+    cxn = get_connection()
+    college = get_college(cxn, college_name)
+    d = pq(url=college[1])
+    script = d('script:contains("loadRow")').text().split("\n")
+    indices = {}
+
+    i = 0
+    previous_sport = ""
+    for line in script:
+        params = line.split(", ")
+        sport_name = params[0].split("('")[1][:-1].replace("\\'", "'")
+        if sport_name in sports:
+            indices[sport_name] = [int(params[3]) - i, -1]
+        if previous_sport and previous_sport in indices:
+            indices[previous_sport][1] = (int(params[3]) - i)
+        previous_sport = sport_name
+        i = i + 1
+    
+    rows = d('tr.staff_dgrd_alt,tr.staff_dgrd_item')
+
+    for sport, endpoints in indices.items():
+        if endpoints[1] == -1:
+          print(endpoints[0])
+          print(endpoints[1])
+          endpoints[1] = len(rows)
+        for i in range(endpoints[0], endpoints[1]):
+            parse_row(cxn, college[0], college[1], sports[sport], rows[i], ["name", "title", "email", "phone"])
+
+    close_connection(cxn)
+
+
 
 def add_area_code(info, area_code):
     if 'phone' in info and info['phone'] and area_code:
