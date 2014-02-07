@@ -25,7 +25,7 @@ for key, sport in sports.items():
         info_row = info_row.next();
     while info_row.children().length > 1 and info_row.children().length < 7:
         scraper.parse_row(cxn, college[0], college[1], sport, info_row.children(), ["name", "phone", None, None, "title", "email"],
-                          scraper.add_area_code, "(413)")
+                          {'phone_prefix' : "(413) "})
         info_row = info_row.next()
 
 scraper.close_connection(cxn)

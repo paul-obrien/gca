@@ -31,6 +31,6 @@ for key, sport in sports.items():
     coaches = table("tr")
     for coach in coaches:
         scraper.parse_row(cxn, college[0], college[1], sport, coach, [["name", "email"], "title", "phone"],
-                          scraper.add_area_code, "(719)")
+                          {'phone_prefix' : "(719) "})
 
 scraper.close_connection(cxn)
