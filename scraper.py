@@ -110,9 +110,14 @@ def parse_cell_content(info, cell_content, field_name, sub_field_names=None, spl
         info['name'] = strip_string(cell_content.text_content())
     else:
         # Check for a "mailto" link
-        if field_name == "email" and cell_content.get("href") and cell_content.get("href").startswith("mailto:"):
-            info[field_name] = cell_content.get("href")[7:]
-        else:               
+        found = False
+        if field_name == "email":
+            email = find_email(cell_content)
+            if email:
+                info['email'] = email[7:]
+                found = True
+            
+        if not found:               
             info[field_name] = strip_string(cell_content.text_content())
     
 def parse_row(cxn, college, base_url, sport, elements, field_names, custom_params=None, custom_parsers={}):
