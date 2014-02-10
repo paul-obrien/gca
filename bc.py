@@ -4,7 +4,7 @@ import constants
 
 sports = {"m-basebl" : constants.BASEBALL, "m-baskbl" : constants.MENS_BASKETBALL, "w-baskbl" : constants.WOMENS_BASKETBALL,
              "cheer" : constants.CHEERLEADING, "xc" : constants.MENS_CROSS_COUNTRY, "w-xc" : constants.WOMENS_CROSS_COUNTRY,
-             "fence" : constants.FENCING, "f-hockey" : constants.FIELD_HOCKEY, "m-footbl" : constants.FOOTBALL,
+             "fence" : constants.MENS_FENCING, "f-hockey" : constants.FIELD_HOCKEY, "m-footbl" : constants.FOOTBALL,
              "m-golf" : constants.MENS_GOLF, "w-golf" : constants.WOMENS_GOLF,
              "m-ihockey" : constants.MENS_ICE_HOCKEY, "w-ihockey" : constants.WOMENS_ICE_HOCKEY,
              "w-lax" : constants.WOMENS_LACROSSE,

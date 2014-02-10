@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 import mysql.connector
 from mysql.connector import errorcode
 import urllib
@@ -80,6 +81,16 @@ def field_name_list(field_names):
 def strip_string(string):
     return string.strip().rstrip().replace("&nbsp;", "") if string else None
 
+def find_email(element):
+    if element.get("href"):
+        return element.get("href")
+    elif element.getchildren():
+        email = None
+        for link in element.getchildren():
+            email = find_email(link)
+            if email:
+                return email
+
 def parse_cell_content(info, cell_content, field_name, sub_field_names=None, split_string=None):
     if split_string:
         if not cell_content.text_content():
@@ -91,11 +102,12 @@ def parse_cell_content(info, cell_content, field_name, sub_field_names=None, spl
             i = i + 1
     elif sub_field_names:
         # Name and email in the same cell
-        if cell_content.get("href"):
-            info['email'] = cell_content.get("href")[7:]
-        else:
-            info['email'] = ""
-        info['name'] = cell_content.text_content()
+        email = find_email(cell_content)
+        if email and email.startswith("http://"):
+            info['profile_url'] = email
+        elif email:
+            info['email'] = email[7:]
+        info['name'] = strip_string(cell_content.text_content())
     else:
         # Check for a "mailto" link
         if field_name == "email" and cell_content.get("href") and cell_content.get("href").startswith("mailto:"):
@@ -103,10 +115,9 @@ def parse_cell_content(info, cell_content, field_name, sub_field_names=None, spl
         else:               
             info[field_name] = strip_string(cell_content.text_content())
     
-def parse_row(cxn, college, base_url, sport, elements, field_names, custom_params=None):
+def parse_row(cxn, college, base_url, sport, elements, field_names, custom_params=None, custom_parsers={}):
     i = 0
-    info = {}
-    profile_url = ""
+    info = {'phone' : '', 'profile_url' : '', 'email' : ''}
     for field in elements:
         field_name = field_names[i]
         if not field_name:
@@ -116,15 +127,19 @@ def parse_row(cxn, college, base_url, sport, elements, field_names, custom_param
         sub_field_names = None
         if isinstance(field_name, list):
           sub_field_names = field_name
-        if isinstance(field_name, tuple):
+        elif isinstance(field_name, tuple):
           sub_field_names = field_name[0]
           split_string = field_name[1]
+        elif field_name in custom_parsers:
+            custom_parsers[field_name](info, field, base_url)
+            i = i + 1
+            continue
         parse_cell_content(info, field, field_name, sub_field_names, split_string)
         if field_name == "name" or (isinstance(field_name, tuple) and "name" in field_name[0]):
             for link in field.iter("a"):
-                profile_url = link.get("href")
-                if profile_url and not profile_url.startswith('http'):
-                    profile_url = urljoin(base_url, profile_url)
+                info['profile_url'] = link.get("href")
+                if info['profile_url'] and not info['profile_url'].startswith('http'):
+                    info['profile_url'] = urljoin(base_url, info['profile_url'])
                                             
         i = i + 1
         if i >= len(field_names):
@@ -137,9 +152,11 @@ def parse_row(cxn, college, base_url, sport, elements, field_names, custom_param
                info[field_name] = None
         if isinstance(sport, list):
             for sp in sport:
-                save_coach(cxn, college, get_sport_id(cxn, sp), info['name'], info['title'], info['phone'], info['email'], profile_url)
+                save_coach(cxn, college, get_sport_id(cxn, sp), info['name'], info['title'],
+                           info['phone'], info['email'], info['profile_url'])
         else:
-            save_coach(cxn, college, get_sport_id(cxn, sport), info['name'], info['title'], info['phone'], info['email'], profile_url)
+            save_coach(cxn, college, get_sport_id(cxn, sport), info['name'], info['title'],
+                       info['phone'], info['email'], info['profile_url'])
 
 def scrape_asp_site(college_name, sports, fields=["name", "title", "email", "phone"], custom_params=None):
     cxn = get_connection()
@@ -177,6 +194,23 @@ def scrape_asp_site(college_name, sports, fields=["name", "title", "email", "pho
 
     close_connection(cxn)
 
+def default_get_table(header):
+    return header.next()
+
+def scrape_roster_row_site(college_name, sports, header_tag, fields=["name", "title", "email", "phone"], custom_params=None, get_table=default_get_table):
+    cxn = get_connection()
+    college = get_college(cxn, college_name)
+    d = pq(url=college[1])
+    for key, sport in sports.items():
+        print (sport);
+        finder = header_tag + ':contains("' + key + '")'
+        header = d(finder)
+        tables = get_table(header)
+        coaches = tables("tr[class^='roster-row']")
+        for coach in coaches:
+            parse_row(cxn, college[0], college[1], sport, coach, fields)
+
+    close_connection(cxn)
 
 def massage_data(info, params):
     if 'phone_prefix' in params and 'phone' in info and info['phone']:
@@ -185,6 +219,8 @@ def massage_data(info, params):
         info['email'] = info['email'] + params['email_suffix']
     if 'truncate_name' in params and 'name' in info and info['name']:
         info['name'] = strip_string(info['name'].split(params['truncate_name'])[0])
+    if 'remove_non_ascii' in params and 'title' in info and info['title']:
+        info['title'] = ''.join([i if ord(i) < 128 else params['remove_non_ascii'] for i in info['title']])
     
 
     
