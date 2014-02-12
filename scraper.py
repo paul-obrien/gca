@@ -81,8 +81,8 @@ def field_name_list(field_names):
 def strip_string(string):
     return string.strip().rstrip().replace("&nbsp;", "") if string else None
 
-def find_email(element):
-    if element.get("href"):
+def find_email(element, mailto_only=True):
+    if element.get("href") and (not mailto_only or element.get("href").startswith("mailto")):
         return element.get("href")
     elif element.getchildren():
         email = None
@@ -102,11 +102,11 @@ def parse_cell_content(info, cell_content, field_name, sub_field_names=None, spl
             i = i + 1
     elif sub_field_names:
         # Name and email in the same cell
-        email = find_email(cell_content)
-        if email and email.startswith("http://"):
-            info['profile_url'] = email
-        elif email:
+        email = find_email(cell_content, False)
+        if email and email.startswith("mailto"):
             info['email'] = email[7:]
+        elif email:
+            info['profile_url'] = email
         info['name'] = strip_string(cell_content.text_content())
     else:
         # Check for a "mailto" link
@@ -143,13 +143,13 @@ def parse_row(cxn, college, base_url, sport, elements, field_names, custom_param
         if field_name == "name" or (isinstance(field_name, tuple) and "name" in field_name[0]):
             for link in field.iter("a"):
                 info['profile_url'] = link.get("href")
-                if info['profile_url'] and not info['profile_url'].startswith('http'):
-                    info['profile_url'] = urljoin(base_url, info['profile_url'])
                                             
         i = i + 1
         if i >= len(field_names):
             break
     if 'name' in info and info['name']:
+        if info['profile_url'] and not info['profile_url'].startswith('http'):
+            info['profile_url'] = urljoin(base_url, info['profile_url'])
         if custom_params:
             massage_data(info, custom_params)
         for field_name in field_name_list(field_names):
@@ -226,6 +226,9 @@ def massage_data(info, params):
         info['name'] = strip_string(info['name'].split(params['truncate_name'])[0])
     if 'remove_non_ascii' in params and 'title' in info and info['title']:
         info['title'] = ''.join([i if ord(i) < 128 else params['remove_non_ascii'] for i in info['title']])
+    # Michigan only lists head coaches
+    if 'title' in params:
+        info['title'] = params['title']
     
 
     
