@@ -122,7 +122,7 @@ def parse_cell_content(info, cell_content, field_name, sub_field_names=None, spl
     
 def parse_row(cxn, college, base_url, sport, elements, field_names, custom_params=None, custom_parsers={}):
     i = 0
-    info = {'phone' : '', 'profile_url' : '', 'email' : ''}
+    info = {'phone' : '', 'profile_url' : '', 'email' : '', 'title' : ''}
     for field in elements:
         field_name = field_names[i]
         if not field_name:
@@ -162,6 +162,7 @@ def parse_row(cxn, college, base_url, sport, elements, field_names, custom_param
         else:
             save_coach(cxn, college, get_sport_id(cxn, sport), info['name'], info['title'],
                        info['phone'], info['email'], info['profile_url'])
+        return info
 
 def scrape_asp_site(college_name, sports, fields=["name", "title", "email", "phone"], custom_params=None):
     cxn = get_connection()
@@ -227,7 +228,7 @@ def massage_data(info, params):
     if 'remove_non_ascii' in params and 'title' in info and info['title']:
         info['title'] = ''.join([i if ord(i) < 128 else params['remove_non_ascii'] for i in info['title']])
     # Michigan only lists head coaches
-    if 'title' in params:
+    if 'title' in params and not info['title']:
         info['title'] = params['title']
     
 
