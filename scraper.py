@@ -182,7 +182,7 @@ def scrape_asp_site(college_name, sports, fields=["name", "title", "email", "pho
     previous_sport = ""
     for line in script:
         params = line.split(", ")
-        sport_name = params[0].split("('")[1][:-1].replace("\\'", "'")
+        sport_name = strip_string(params[0].split("('")[1][:-1].replace("\\'", "'"))
         if sport_name in sports:
             indices[sport_name] = [int(params[3]) - i, -1]
         if previous_sport and previous_sport in indices:
@@ -230,6 +230,10 @@ def massage_data(info, params):
     # Michigan only lists head coaches
     if 'title' in params and not info['title']:
         info['title'] = params['title']
+    if 'remove_chars' in params:
+        for key, value in info.items():
+            if value:
+                info[key] = value.replace(params['remove_chars'], '')
     
 
     
