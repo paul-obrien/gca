@@ -1,0 +1,6 @@
+# Sat Jan 18 15:51:49 2014
+# Query_time: 1.139014  Lock_time: 0.018176 Rows_sent: 694  Rows_examined: 16080
+use goalcoll_wrd1;
+SET timestamp=1390085509;
+SELECT option_name, option_value FROM wp_blazegiantsoptions WHERE autoload = 'yes'
+

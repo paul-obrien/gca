@@ -1,0 +1,12 @@
+# Mon Feb 24 23:01:25 2014
+# Query_time: 1.182369  Lock_time: 0.002022 Rows_sent: 622  Rows_examined: 622
+use goalcoll_wrd1;
+SET timestamp=1393308085;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_blazegiantsposts.post_date DESC
+
+# Mon Feb 24 23:16:08 2014
+# Query_time: 1.063807  Lock_time: 0.021787 Rows_sent: 622  Rows_examined: 622
+use goalcoll_wrd1;
+SET timestamp=1393308968;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_blazegiantsposts.post_date DESC
+

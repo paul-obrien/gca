@@ -1,0 +1,16 @@
+show_html_default=1
+compose_window_type=html
+left_size=280
+javascript_on=0
+use_javascript_addr_book=0
+hililist=a:0:{}
+spamcop_method=web_form
+archivefilenames=6
+archiveattachments=1
+archivetype=0
+archiveent=1
+todo_first_login=0
+security_tokens=a:3:{s:12:"Fgck5YYmxZdC";i:1347474967;s:12:"xNUOySSoQVwu";i:1347474976;s:12:"qep00rVW6F2V";i:1347474976;}
+sui_last_ip=64.179.64.5
+sui_last_host=host-64-179-64-5.alb.choiceone.net
+sui_last_date=1347474967

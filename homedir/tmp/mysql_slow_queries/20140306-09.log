@@ -1,0 +1,11 @@
+# Thu Mar  6 09:04:32 2014
+# Query_time: 1.207003  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+use goalcoll_wrd1;
+SET timestamp=1394121872
+
+# Thu Mar  6 09:06:57 2014
+# Query_time: 144.586305  Lock_time: 137.454024 Rows_sent: 0  Rows_examined: 0
+use goalcoll_wrd1;
+SET timestamp=1394122017;
+SELECT option_name, option_value FROM wp_blazegiantsoptions WHERE autoload = 'yes'
+

@@ -1,0 +1,21 @@
+# Fri Feb 28 14:15:13 2014
+# Query_time: 1.359188  Lock_time: 0.000223 Rows_sent: 665  Rows_examined: 9659
+use goalcoll_wrd1;
+SET timestamp=1393622113;
+SELECT post_modified FROM wp_blazegiantsposts WHERE post_status = 'publish' ORDER BY post_modified DESC
+
+# Fri Feb 28 14:22:18 2014
+# Query_time: 1.020269  Lock_time: 0.001269 Rows_sent: 12  Rows_examined: 9714
+SET timestamp=1393622538;
+SELECT *
+  FROM
+  (
+  SELECT post_type, max(post_modified) AS mpmd
+  FROM wp_blazegiantsposts
+  WHERE post_status = 'publish'
+  GROUP BY post_type
+  ) AS f
+  INNER JOIN wp_blazegiantsposts AS s ON s.post_type = f.post_type
+  AND s.post_modified = f.mpmd
+  LIMIT 1003
+

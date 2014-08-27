@@ -1,0 +1,18 @@
+# Mon Jan 27 21:16:48 2014
+# Query_time: 3.172988  Lock_time: 0.439440 Rows_sent: 1  Rows_examined: 629
+use goalcoll_wrd1;
+SET timestamp=1390882608;
+SELECT post_modified_gmt FROM wp_blazegiantsposts WHERE post_status = 'publish' AND post_type IN ('post', 'page', 'attachment') ORDER BY post_modified_gmt DESC LIMIT 1
+
+# Mon Jan 27 21:34:57 2014
+# Query_time: 1.104993  Lock_time: 0.019722 Rows_sent: 645  Rows_examined: 9469
+use goalcoll_wrd1;
+SET timestamp=1390883697;
+SELECT post_modified FROM wp_blazegiantsposts WHERE post_status = 'publish' ORDER BY post_modified DESC
+
+# Mon Jan 27 21:36:03 2014
+# Query_time: 2.766193  Lock_time: 0.019257 Rows_sent: 605  Rows_examined: 1210
+use goalcoll_wrd1;
+SET timestamp=1390883763;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+

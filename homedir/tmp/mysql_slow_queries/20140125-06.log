@@ -1,0 +1,25 @@
+# Sat Jan 25 06:05:43 2014
+# Query_time: 1.227134  Lock_time: 0.093292 Rows_sent: 29  Rows_examined: 1180
+use goalcoll_wrd1;
+SET timestamp=1390655143;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+
+# Sat Jan 25 06:56:52 2014
+# Query_time: 4.226520  Lock_time: 0.019174 Rows_sent: 12  Rows_examined: 9485
+use goalcoll_wrd1;
+SET timestamp=1390658212;
+SELECT *
+  FROM
+  (
+  SELECT post_type, max(post_modified) AS mpmd
+  FROM wp_blazegiantsposts
+  WHERE post_status = 'publish'
+  GROUP BY post_type
+  ) AS f
+  INNER JOIN wp_blazegiantsposts AS s ON s.post_type = f.post_type
+  AND s.post_modified = f.mpmd
+  LIMIT 1003
+

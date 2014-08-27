@@ -1,0 +1,43 @@
+# Thu Jan 16 20:34:37 2014
+# Query_time: 3.571914  Lock_time: 0.015500 Rows_sent: 598  Rows_examined: 1196
+use goalcoll_wrd1;
+SET timestamp=1389929677;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+
+# Thu Jan 16 20:34:37 2014
+# Query_time: 3.573862  Lock_time: 0.015281 Rows_sent: 598  Rows_examined: 1196
+SET timestamp=1389929677;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+
+# Thu Jan 16 20:34:38 2014
+# Query_time: 3.585181  Lock_time: 0.015464 Rows_sent: 598  Rows_examined: 1196
+SET timestamp=1389929678;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+
+# Thu Jan 16 20:34:48 2014
+# Query_time: 1.831887  Lock_time: 0.061586 Rows_sent: 46  Rows_examined: 95
+use goalcoll_wrd1;
+SET timestamp=1389929688;
+SELECT   wp_blazegiantsposts.* FROM wp_blazegiantsposts  WHERE 1=1  AND (wp_blazegiantsposts.post_mime_type LIKE 'image/%')  AND wp_blazegiantsposts.post_type = 'attachment' AND (wp_blazegiantsposts.post_status <> 'trash' AND wp_blazegiantsposts.post_status <> 'auto-draft')  ORDER BY wp_blazegiantsposts.post_date desc
+
+# Thu Jan 16 20:34:48 2014
+# Query_time: 1.831811  Lock_time: 0.061431 Rows_sent: 46  Rows_examined: 95
+SET timestamp=1389929688;
+SELECT   wp_blazegiantsposts.* FROM wp_blazegiantsposts  WHERE 1=1  AND (wp_blazegiantsposts.post_mime_type LIKE 'image/%')  AND wp_blazegiantsposts.post_type = 'attachment' AND (wp_blazegiantsposts.post_status <> 'trash' AND wp_blazegiantsposts.post_status <> 'auto-draft')  ORDER BY wp_blazegiantsposts.post_date desc
+
+# Thu Jan 16 20:34:48 2014
+# Query_time: 1.843064  Lock_time: 0.061490 Rows_sent: 46  Rows_examined: 95
+SET timestamp=1389929688;
+SELECT   wp_blazegiantsposts.* FROM wp_blazegiantsposts  WHERE 1=1  AND (wp_blazegiantsposts.post_mime_type LIKE 'image/%')  AND wp_blazegiantsposts.post_type = 'attachment' AND (wp_blazegiantsposts.post_status <> 'trash' AND wp_blazegiantsposts.post_status <> 'auto-draft')  ORDER BY wp_blazegiantsposts.post_date desc
+
+# Thu Jan 16 20:43:26 2014
+# Query_time: 1.886422  Lock_time: 0.000494 Rows_sent: 598  Rows_examined: 1196
+use goalcoll_wrd1;
+SET timestamp=1389930206;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+
+# Thu Jan 16 20:43:26 2014
+# Query_time: 1.981031  Lock_time: 0.000179 Rows_sent: 598  Rows_examined: 1196
+SET timestamp=1389930206;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+

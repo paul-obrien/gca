@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Łukasz Nowicki <jagoo@post.pl>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# analytics_head.php:107
+msgid "Analytics Head plugin options"
+msgstr "Opcje pluginu Analytics Head"
+
+# analytics_head.php:208
+msgid "Select this option to not add the tracking code for logged in users with administrator privileges."
+msgstr "Zaznacz tę opcję, aby nie dodawać kodu śledzącego dla zalogowanych użytkowników z uprawnieniami administratora."
+
+# analytics_head.php:204
+# analytics_head.php:207
+msgid "Hide for administrators"
+msgstr "Ukrywaj dla administratorów"
+
+# analytics_head.php:195
+# analytics_head.php:198
+msgid "Google Analytics ID"
+msgstr "ID Google Analytics"
+
+# analytics_head.php:199
+msgid "Using format UA-XXXXXXXX-Y"
+msgstr "Używając formatu UA-XXXXXXXX-Y"
+
+# analytics_head.php:190
+msgid "This plugin has only two settings. Google Analytics code and the option of hiding the code for users logged on with administrator privileges. This will not count your visit that does not distort the results in the service."
+msgstr "Ta wtyczka ma tylko dwa ustawienia. Kod usługi Google Analytics oraz opcję ukrywania kodu dla zalogowanych użytkowników z uprawnieniami administratora. Dzięki temu nie będą zliczane twoje wizyty co nie zniekształci rezultatów w usłudze."
+
+# analytics_head.php:47
+msgid "This plugin is distributed under the terms of GPLv2. For more information see"
+msgstr "Ten plugin rozpowszechniany jest na licencji GPLv2. Więcej informacji na stronie"
+
+# analytics_head.php:117
+msgid "Plugin is almost ready for operation. You need to enter in the  tracking code ID:"
+msgstr "Wtyczka jest prawie gotowa do działania. Musisz jeszcze wprowadzić ID kodu śledzącego:"
+
+# analytics_head.php:72
+msgid "Added by Analytics Head plugin"
+msgstr "Dodane przez wtyczkę Analytics Head"
+

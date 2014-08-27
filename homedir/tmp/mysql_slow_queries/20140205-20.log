@@ -1,0 +1,18 @@
+# Wed Feb  5 20:18:46 2014
+# Query_time: 1.196621  Lock_time: 0.000157 Rows_sent: 29  Rows_examined: 1206
+use goalcoll_wrd1;
+SET timestamp=1391656726;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+
+# Wed Feb  5 20:38:59 2014
+# Query_time: 2.550105  Lock_time: 0.034762 Rows_sent: 29  Rows_examined: 1206
+use goalcoll_wrd1;
+SET timestamp=1391657939;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+

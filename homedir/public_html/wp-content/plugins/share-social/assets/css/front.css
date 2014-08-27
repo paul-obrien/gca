@@ -1,0 +1,148 @@
+/* CSS Document */
+.cunjo-social-profiles > ul {
+	list-style: none !important;
+	margin: 0 !important;
+}
+.cunjo-social-profiles > ul li {
+	list-style: none !important;
+	list-style-type: none !important;
+	list-style-image: none !important;
+	list-style-position: initial !important;
+	background: none !important;
+	float: left;
+	vertical-align: middle !important;
+	height: 42px !important;
+}
+.cunjo-social-profiles > ul li a {
+	position: relative !important;
+	opacity: 1 !important;
+	display: inline-block !important;
+	visibility: visible !important;
+	width: 40px !important;
+	height: 42px !important;
+}
+.cunjo-social-profiles > ul li a:hover {
+	opacity: 0.7 !important;
+}
+.cunjo-social-profiles > ul li.facebook a { background-position: 0 0;}
+.cunjo-social-profiles > ul li.twitter a {background-position: -40px 0;}
+.cunjo-social-profiles > ul li.linkedin a {background-position: -80px 0;}
+.cunjo-social-profiles > ul li.pinterest a {background-position: -120px 0;}
+.cunjo-social-profiles > ul li.googleplus a {background-position: -160px 0;}
+.cunjo-social-profiles > ul li.digg a {background-position: -200px 0;}
+.cunjo-social-profiles > ul li.myspace a {background-position: -240px 0;}
+.cunjo-social-profiles > ul li.stumbleupon a {background-position: -280px 0;}
+.cunjo-social-profiles > ul li.bebo a {background-position: -320px 0;}
+.cunjo-social-profiles > ul li.blogger a {background-position: -360px 0;}
+.cunjo-social-profiles > ul li.delicious a {background-position: -400px 0;}
+.cunjo-social-profiles > ul li.xing a {background-position: -440px 0;}
+.cunjo-social-profiles > ul li.tumblr a {background-position: -480px 0;}
+.cunjo-social-profiles > ul li.technorati a {background-position: -520px 0;}
+.cunjo-social-profiles > ul li.reddit a {background-position: -560px 0;}
+.cunjo-social-profiles > ul li.netlog a {background-position: -600px 0;}
+.cunjo-social-profiles > ul li.identi a {background-position: -640px 0;}
+.cunjo-social-profiles > ul li.friendfeed a {background-position: -680px 0;}
+.cunjo-social-profiles > ul li.evernote a {background-position: -720px 0;}
+.cunjo-social-profiles > ul li.diigo a {background-position: -760px 0;}
+.cunjo-social-profiles > ul li.vk a {background-position: -840px 0;}
+.cunjo-social-profiles > ul li.youtube a {background-position: -910px 0;}
+.cunjo-social-profiles > ul li.flickr a {background-position: -950px 0;}
+.cunjo-social-profiles > ul li.dribbble a {background-position: -990px 0;}
+.cunjo-social-profiles > ul li.rss a {background-position: -1030px 0;}
+.cunjo-social-profiles > ul li.vimeo a {background-position: -1070px 0;}
+.cunjo-social-profiles > ul li.instagram a {background-position: -1110px 0;}
+.cunjo-social-profiles > ul li.behance a {background-position: -1150px 0;}
+.cunjo-social-profiles > ul li.email a {background-position: -1190px 0;}
+
+.cunjo-social-profiles.cunjo-icons > ul li a {
+	text-decoration: none !important;
+	background-image: url(../images/social-icons.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cunjo-social-profiles.cunjo-satin > ul li a {
+	text-decoration: none !important;
+	background-image: url(../images/social-satin.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cunjo-social-profiles.cunjo-elegant > ul li a {
+	text-decoration: none !important;
+	background-image: url(../images/social-elegant.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cunjo-social-profiles.cunjo-metro > ul li a {
+	text-decoration: none !important;
+	background-image: url(../images/social-metro.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cunjo-social-profiles.cunjo-milky > ul li a {
+	text-decoration: none !important;
+	background-image: url(../images/social-milky.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cunjo-social-profiles.cunjo-bald > ul li a {
+	text-decoration: none !important;
+	background-image: url(../images/social-bald.png) !important;
+	background-repeat: no-repeat !important;
+}
+.cunjo-social-profiles.cunjo-round > ul li a {
+	text-decoration: none !important;
+	background-image: url(../images/social-round.png) !important;
+	background-repeat: no-repeat !important;
+}
+
+#cunjo-tweets {
+	margin: 0px;	
+}
+#cunjo-tweets ul {
+	margin: 0px;
+	list-style: none !important;
+}
+#cunjo-tweets li {
+	padding: 5px;
+	border-bottom:1px solid #ccc;
+	line-height:150%;
+	margin: 0px;
+	list-style: none !important;
+}
+
+#cunjo-tweets li .timestamp {text-align:right;}
+
+#cunjo-tweets li.tweet_content_0 {
+	border-top:0px none;
+}
+#cunjo-tweets li:last-child{
+	border-bottom:0px none;	
+}
+.cunjo-shot {
+	float: left;
+	margin: 0px 0px 8px 8px;
+	width: 45%;
+}
+.cunjo-shot img {
+	width: 100%;
+}
+.cunjo-shot:hover {
+	opacity: 0.7;
+}
+.cunjo-pin {
+	float: left;
+	margin: 0px 0px 8px 8px;
+	width: 45%;
+	max-height: 100px;
+	overflow: hidden;
+}
+.cunjo-pin img {
+	width: 100%;
+}
+.cunjo-pin:hover {
+	opacity: 0.7;
+}
+.cunjo-pin-follow {
+	text-align:center;
+}
+
+
+
+
+
+

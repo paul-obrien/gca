@@ -1,0 +1,6 @@
+# Sat Feb 15 08:40:52 2014
+# Query_time: 1.105552  Lock_time: 0.000131 Rows_sent: 660  Rows_examined: 9607
+use goalcoll_wrd1;
+SET timestamp=1392478852;
+SELECT post_modified FROM wp_blazegiantsposts WHERE post_status = 'publish' ORDER BY post_modified DESC
+

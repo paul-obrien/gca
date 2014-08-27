@@ -1,0 +1,4 @@
+Disk quotas for user goalcoll (uid 1409):
+Filesystem    blocks    quota limit grace files quota limit grace
+/dev/sdg1   189762    0     0           13338 0     0
+/dev/sdb1   0         0     0           3     0     0

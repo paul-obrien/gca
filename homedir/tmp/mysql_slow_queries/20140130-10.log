@@ -1,0 +1,352 @@
+# Thu Jan 30 10:25:12 2014
+# Query_time: 1.036672  Lock_time: 0.000134 Rows_sent: 608  Rows_examined: 1216
+use goalcoll_wrd1;
+SET timestamp=1391102712;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+
+# Thu Jan 30 10:28:55 2014
+# Query_time: 20.780456  Lock_time: 0.155354 Rows_sent: 29  Rows_examined: 1198
+use goalcoll_wrd1;
+SET timestamp=1391102935;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+
+# Thu Jan 30 10:29:03 2014
+# Query_time: 1.238755  Lock_time: 0.094312 Rows_sent: 13  Rows_examined: 26
+use goalcoll_wrd1;
+SET timestamp=1391102943;
+SELECT t.term_id, t.name 
+  FROM wp_blazegiantsterms AS t INNER JOIN wp_blazegiantsterm_taxonomy AS tt 
+  ON t.term_id = tt.term_id
+  WHERE tt.taxonomy = 'category' AND tt.parent = 0
+
+# Thu Jan 30 10:30:01 2014
+# Query_time: 1.528422  Lock_time: 0.473948 Rows_sent: 2  Rows_examined: 2
+use goalcoll_wrd1;
+SET timestamp=1391103001;
+SELECT ID, post_name, post_parent, post_type FROM wp_blazegiantsposts WHERE post_name IN ('coach-advice','mens-womens-cross-country-track-field','sacred-heart-university-assistant-coach-jon-debogory') AND (post_type = 'page' OR post_type = 'attachment')
+
+# Thu Jan 30 10:31:37 2014
+# Query_time: 134.496587  Lock_time: 0.050206 Rows_sent: 608  Rows_examined: 1216
+use goalcoll_wrd1;
+SET timestamp=1391103097;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+
+# Thu Jan 30 10:31:56 2014
+# Query_time: 106.924924  Lock_time: 5.478817 Rows_sent: 608  Rows_examined: 1216
+use goalcoll_wrd1;
+SET timestamp=1391103116;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+
+# Thu Jan 30 10:32:05 2014
+# Query_time: 1.061528  Lock_time: 0.050107 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103125;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1430) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:32:05 2014
+# Query_time: 1.061413  Lock_time: 0.050109 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103125;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1430) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:32:23 2014
+# Query_time: 1.472561  Lock_time: 0.107579 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103143;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (2450) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:32:23 2014
+# Query_time: 1.476386  Lock_time: 0.107587 Rows_sent: 9  Rows_examined: 18
+SET timestamp=1391103143;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (2450) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:32:36 2014
+# Query_time: 1.329927  Lock_time: 0.090546 Rows_sent: 7  Rows_examined: 14
+use goalcoll_wrd1;
+SET timestamp=1391103156;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (809) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:32:36 2014
+# Query_time: 1.330345  Lock_time: 0.090390 Rows_sent: 7  Rows_examined: 14
+SET timestamp=1391103156;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (809) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:32:45 2014
+# Query_time: 1.086866  Lock_time: 0.051282 Rows_sent: 10  Rows_examined: 20
+use goalcoll_wrd1;
+SET timestamp=1391103165;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (7771) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:32:47 2014
+# Query_time: 1.349798  Lock_time: 0.253841 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103167;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (3650) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:32:47 2014
+# Query_time: 1.349873  Lock_time: 0.251097 Rows_sent: 9  Rows_examined: 18
+SET timestamp=1391103167;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (3650) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:33:46 2014
+# Query_time: 1.967123  Lock_time: 0.050145 Rows_sent: 25  Rows_examined: 16080
+use goalcoll_wrd1;
+SET timestamp=1391103226;
+SELECT option_name, option_value FROM wp_blazegiantsoptions WHERE option_name LIKE '%cunjoshare_%'
+
+# Thu Jan 30 10:33:52 2014
+# Query_time: 4.223063  Lock_time: 0.813849 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103232;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (2513) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:33:52 2014
+# Query_time: 4.223129  Lock_time: 0.813895 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103232;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (2513) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:33:56 2014
+# Query_time: 1.806450  Lock_time: 0.795657 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103236;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (500) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:33:56 2014
+# Query_time: 1.806565  Lock_time: 0.795649 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103236;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (500) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:33:58 2014
+# Query_time: 2.044296  Lock_time: 0.850882 Rows_sent: 8  Rows_examined: 16
+use goalcoll_wrd1;
+SET timestamp=1391103238;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (9966) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:33:59 2014
+# Query_time: 1.705332  Lock_time: 0.630628 Rows_sent: 8  Rows_examined: 16
+use goalcoll_wrd1;
+SET timestamp=1391103239;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (9994) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:34:00 2014
+# Query_time: 1.797094  Lock_time: 0.749601 Rows_sent: 8  Rows_examined: 16
+use goalcoll_wrd1;
+SET timestamp=1391103240;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (9994) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:34:03 2014
+# Query_time: 3.968986  Lock_time: 1.671337 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103243;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (6097) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:34:03 2014
+# Query_time: 2.913366  Lock_time: 1.606861 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103243;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (6097) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:34:05 2014
+# Query_time: 16.308929  Lock_time: 1.019478 Rows_sent: 29  Rows_examined: 1198
+use goalcoll_wrd1;
+SET timestamp=1391103245;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+
+# Thu Jan 30 10:34:07 2014
+# Query_time: 1.965967  Lock_time: 0.904463 Rows_sent: 0  Rows_examined: 0
+use goalcoll_wrd1;
+SET timestamp=1391103247;
+SELECT option_value FROM wp_blazegiantsoptions WHERE option_name = 'widget_dlm_widget_downloads' LIMIT 1
+
+# Thu Jan 30 10:34:07 2014
+# Query_time: 2.016558  Lock_time: 0.660152 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103247;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (2127) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:34:11 2014
+# Query_time: 1.398837  Lock_time: 0.342203 Rows_sent: 5  Rows_examined: 23
+use goalcoll_wrd1;
+SET timestamp=1391103251;
+SELECT SQL_CALC_FOUND_ROWS  wp_blazegiantsposts.ID FROM wp_blazegiantsposts  WHERE 1=1  AND wp_blazegiantsposts.post_type = 'post' AND (wp_blazegiantsposts.post_status = 'publish')  ORDER BY wp_blazegiantsposts.post_date DESC LIMIT 0, 5
+
+# Thu Jan 30 10:34:30 2014
+# Query_time: 2.293445  Lock_time: 0.533993 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103270;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1758) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:34:45 2014
+# Query_time: 3.269423  Lock_time: 0.458788 Rows_sent: 8  Rows_examined: 16
+use goalcoll_wrd1;
+SET timestamp=1391103285;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (10229) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:34:46 2014
+# Query_time: 3.724608  Lock_time: 0.328303 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103286;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1516) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:34:46 2014
+# Query_time: 3.729540  Lock_time: 0.333184 Rows_sent: 9  Rows_examined: 18
+SET timestamp=1391103286;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1516) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:09 2014
+# Query_time: 2.114917  Lock_time: 0.559251 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103309;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1920) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:09 2014
+# Query_time: 2.114811  Lock_time: 0.559261 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103309;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1920) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:09 2014
+# Query_time: 2.115664  Lock_time: 0.559168 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103309;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1920) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:18 2014
+# Query_time: 2.529784  Lock_time: 0.878453 Rows_sent: 8  Rows_examined: 16
+use goalcoll_wrd1;
+SET timestamp=1391103318;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (10892) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:20 2014
+# Query_time: 2.596229  Lock_time: 1.010004 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103320;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1113) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:20 2014
+# Query_time: 2.602455  Lock_time: 1.013497 Rows_sent: 9  Rows_examined: 18
+SET timestamp=1391103320;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1113) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:21 2014
+# Query_time: 3.209733  Lock_time: 1.559128 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103321;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1951) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:25 2014
+# Query_time: 3.870356  Lock_time: 2.599960 Rows_sent: 8  Rows_examined: 16
+use goalcoll_wrd1;
+SET timestamp=1391103325;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (10874) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:25 2014
+# Query_time: 4.057176  Lock_time: 2.599979 Rows_sent: 8  Rows_examined: 16
+use goalcoll_wrd1;
+SET timestamp=1391103325;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (10874) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:25 2014
+# Query_time: 3.658793  Lock_time: 2.452035 Rows_sent: 8  Rows_examined: 16
+use goalcoll_wrd1;
+SET timestamp=1391103325;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (10874) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:27 2014
+# Query_time: 1.379328  Lock_time: 0.277536 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103327;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (7748) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:27 2014
+# Query_time: 1.400197  Lock_time: 0.298141 Rows_sent: 9  Rows_examined: 18
+SET timestamp=1391103327;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (7748) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:27 2014
+# Query_time: 1.401101  Lock_time: 0.298162 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103327;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (7748) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:42 2014
+# Query_time: 1.531189  Lock_time: 0.050181 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103342;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1640) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:42 2014
+# Query_time: 1.531122  Lock_time: 0.051067 Rows_sent: 9  Rows_examined: 18
+SET timestamp=1391103342;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1640) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:35:42 2014
+# Query_time: 1.531489  Lock_time: 0.072198 Rows_sent: 9  Rows_examined: 18
+SET timestamp=1391103342;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1640) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:36:00 2014
+# Query_time: 15.390843  Lock_time: 0.082080 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103360;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1424) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:36:00 2014
+# Query_time: 15.392016  Lock_time: 0.082105 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103360;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1424) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:36:00 2014
+# Query_time: 15.392128  Lock_time: 0.082130 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103360;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1424) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:36:08 2014
+# Query_time: 7.659711  Lock_time: 0.430344 Rows_sent: 8  Rows_examined: 16
+use goalcoll_wrd1;
+SET timestamp=1391103368;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (10972) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:36:08 2014
+# Query_time: 7.659864  Lock_time: 0.430402 Rows_sent: 8  Rows_examined: 16
+use goalcoll_wrd1;
+SET timestamp=1391103368;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (10972) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:36:08 2014
+# Query_time: 7.661387  Lock_time: 0.430375 Rows_sent: 8  Rows_examined: 16
+use goalcoll_wrd1;
+SET timestamp=1391103368;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (10972) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:36:12 2014
+# Query_time: 1.073834  Lock_time: 0.050232 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1391103372;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (2572) ORDER BY meta_id ASC
+
+# Thu Jan 30 10:37:19 2014
+# Query_time: 38.824335  Lock_time: 0.330635 Rows_sent: 694  Rows_examined: 16080
+use goalcoll_wrd1;
+SET timestamp=1391103439;
+SELECT option_name, option_value FROM wp_blazegiantsoptions WHERE autoload = 'yes'
+
+# Thu Jan 30 10:37:36 2014
+# Query_time: 1.960924  Lock_time: 0.050432 Rows_sent: 29  Rows_examined: 1198
+use goalcoll_wrd1;
+SET timestamp=1391103456;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+

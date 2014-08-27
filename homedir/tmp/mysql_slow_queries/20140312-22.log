@@ -1,0 +1,12 @@
+# Wed Mar 12 22:29:12 2014
+# Query_time: 2.358644  Lock_time: 0.000138 Rows_sent: 632  Rows_examined: 632
+use goalcoll_wrd1;
+SET timestamp=1394684952;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_blazegiantsposts.post_date DESC
+
+# Wed Mar 12 22:29:52 2014
+# Query_time: 2.432845  Lock_time: 0.000221 Rows_sent: 1  Rows_examined: 658
+use goalcoll_wrd1;
+SET timestamp=1394684992;
+SELECT post_modified_gmt FROM wp_blazegiantsposts WHERE post_status = 'publish' AND post_type IN ('post', 'page', 'attachment') ORDER BY post_modified_gmt DESC LIMIT 1
+

@@ -1,0 +1,15 @@
+# Tue Jan 21 08:05:04 2014
+# Query_time: 1.463219  Lock_time: 0.000161 Rows_sent: 0  Rows_examined: 288
+use goalcoll_wrd1;
+SET timestamp=1390316704;
+SELECT ID FROM wp_blazegiantsposts WHERE post_parent = 92 AND post_type = 'page' AND post_status = 'publish' LIMIT 1
+
+# Tue Jan 21 08:41:55 2014
+# Query_time: 1.328181  Lock_time: 0.000144 Rows_sent: 29  Rows_examined: 1174
+use goalcoll_wrd1;
+SET timestamp=1390318915;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+

@@ -1,0 +1,58 @@
+Return-path: <>
+Envelope-to: goalcoll@box483.bluehost.com
+Delivery-date: Mon, 03 Mar 2014 22:26:20 -0700
+Received: from [74.220.209.79] (port=45547 helo=bounce4-pub.mail.unifiedlayer.com)
+	by box483.bluehost.com with smtp (Exim 4.80)
+	id 1WKhrv-0006qo-Nd
+	for goalcoll@box483.bluehost.com; Mon, 03 Mar 2014 22:26:19 -0700
+Received: (qmail 29958 invoked by uid 0); 4 Mar 2014 05:26:17 -0000
+Received: from unknown (HELO oproxy12-pub.mail.unifiedlayer.com) (50.87.16.10)
+  by bounce4.mail.unifiedlayer.com with SMTP; 4 Mar 2014 05:26:17 -0000
+Received: (qmail 9247 invoked for bounce); 4 Mar 2014 05:26:17 -0000
+Date: 4 Mar 2014 05:26:17 -0000
+From: MAILER-DAEMON@bounce.mail.unifiedlayer.com
+To: goalcoll@box483.bluehost.com
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="1393910777bounce.mail.unifiedlayer.com1315790"
+Subject: failure notice
+X-Identified-User: {0000:box483.bluehost.com:local:local} {sentby:Delivered locally}
+
+--1393910777bounce.mail.unifiedlayer.com1315790
+
+Hi. This is the qmail-send program at bounce.mail.unifiedlayer.com.
+I'm afraid I wasn't able to deliver your message to the following addresses.
+This is a permanent error; I've given up. Sorry it didn't work out.
+
+<awm321@yahop.com>:
+Sorry, I couldn't find a mail exchanger or IP address. (#5.4.4)
+
+--- Enclosed are the original headers of the message.
+
+--1393910777bounce.mail.unifiedlayer.com1315790
+Content-Type: message/rfc822
+
+Return-Path: <goalcoll@box483.bluehost.com>
+Received: (qmail 9233 invoked by uid 0); 4 Mar 2014 05:26:17 -0000
+Received: from unknown (HELO box483.bluehost.com) (66.147.242.83)
+  by oproxy12.mail.unifiedlayer.com with SMTP; 4 Mar 2014 05:26:16 -0000
+Received: from localhost ([127.0.0.1]:58559 helo=box483.bluehost.com)
+	by box483.bluehost.com with esmtp (Exim 4.80)
+	(envelope-from <goalcoll@box483.bluehost.com>)
+	id 1WKhrh-0006fQ-AW
+	for awm321@yahop.com; Mon, 03 Mar 2014 22:26:16 -0700
+To: awm321@yahop.com
+Subject: Ebook Download: Student-Athlete Guide To Be Recruited
+X-PHP-Originating-Script: 1409:class-phpmailer.php
+Date: Tue, 4 Mar 2014 05:26:02 +0000
+From: goalcoll@box483.bluehost.com
+Message-ID: <68285befa9b278250aae571722a1a57e@www.goalcollegeathlete.com>
+X-Priority: 3
+X-Mailer: PHPMailer 5.2.4 (http://code.google.com/a/apache-extras.org/p/phpmailer/)
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="b1_68285befa9b278250aae571722a1a57e"
+X-Identified-User: {:box483.bluehost.com:goalcoll:goalcollegeathlete.com} {sentby:program running on server}
+
+(Body supressed)
+
+--1393910777bounce.mail.unifiedlayer.com1315790--

@@ -1,0 +1,16 @@
+# Sat Mar 15 22:53:35 2014
+# Query_time: 1.091679  Lock_time: 0.001006 Rows_sent: 0  Rows_examined: 0
+use goalcoll_wrd1;
+SET timestamp=1394945615;
+SELECT ID, post_name, post_parent, post_type FROM wp_blazegiantsposts WHERE post_name IN ('wp-content','plugins','profile-builder','assets','css','front-end-css') AND (post_type = 'page' OR post_type = 'attachment')
+
+# Sat Mar 15 22:53:37 2014
+# Query_time: 3.489649  Lock_time: 0.000143 Rows_sent: 634  Rows_examined: 634
+SET timestamp=1394945617;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_blazegiantsposts.post_date DESC
+
+# Sat Mar 15 22:53:37 2014
+# Query_time: 1.610886  Lock_time: 0.000136 Rows_sent: 634  Rows_examined: 1268
+SET timestamp=1394945617;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+

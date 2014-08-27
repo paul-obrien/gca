@@ -1,0 +1,41 @@
+# Wed Jan 29 21:00:23 2014
+# Query_time: 1590.418815  Lock_time: 40.231926 Rows_sent: 456  Rows_examined: 507
+use goalcoll_wrd1;
+SET timestamp=1391054423;
+SELECT option_name, option_value FROM wp_blazegiantsoptions WHERE autoload = 'yes'
+
+# Wed Jan 29 21:00:54 2014
+# Query_time: 603.066064  Lock_time: 383.224721 Rows_sent: 1  Rows_examined: 1
+use goalcoll_wrd1;
+SET timestamp=1391054454;
+SHOW COLUMNS
+  FROM wp_blazegiantsebd_link
+  LIKE 'selected_id'
+
+# Wed Jan 29 21:05:39 2014
+# Query_time: 4.485984  Lock_time: 0.511743 Rows_sent: 694  Rows_examined: 16080
+use goalcoll_wrd1;
+SET timestamp=1391054739;
+SELECT option_name, option_value FROM wp_blazegiantsoptions WHERE autoload = 'yes'
+
+# Wed Jan 29 21:07:18 2014
+# Query_time: 46.951949  Lock_time: 27.697070 Rows_sent: 1  Rows_examined: 1
+use goalcoll_wrd1;
+SET timestamp=1391054838;
+SELECT option_value FROM wp_blazegiantsoptions WHERE option_name = 'uninstall_plugins' LIMIT 1
+
+# Wed Jan 29 21:14:05 2014
+# Query_time: 385.652820  Lock_time: 256.241155 Rows_sent: 0  Rows_examined: 0
+use goalcoll_wrd1;
+SET timestamp=1391055245;
+SELECT option_value FROM wp_blazegiantsoptions WHERE option_name = 'bwp_gxs_google_news' LIMIT 1
+
+# Wed Jan 29 21:50:50 2014
+# Query_time: 1.623518  Lock_time: 0.070286 Rows_sent: 29  Rows_examined: 1198
+use goalcoll_wrd1;
+SET timestamp=1391057450;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+

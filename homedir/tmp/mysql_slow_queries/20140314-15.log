@@ -1,0 +1,35 @@
+# Fri Mar 14 15:02:05 2014
+# Query_time: 1.603269  Lock_time: 0.000167 Rows_sent: 633  Rows_examined: 633
+use goalcoll_wrd1;
+SET timestamp=1394830925;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_blazegiantsposts.post_date DESC
+
+# Fri Mar 14 15:06:45 2014
+# Query_time: 1.033769  Lock_time: 0.001396 Rows_sent: 12  Rows_examined: 9796
+use goalcoll_wrd1;
+SET timestamp=1394831205;
+SELECT *
+  FROM
+  (
+  SELECT post_type, max(post_modified) AS mpmd
+  FROM wp_blazegiantsposts
+  WHERE post_status = 'publish'
+  GROUP BY post_type
+  ) AS f
+  INNER JOIN wp_blazegiantsposts AS s ON s.post_type = f.post_type
+  AND s.post_modified = f.mpmd
+  LIMIT 1003
+
+# Fri Mar 14 15:40:46 2014
+# Query_time: 1.168995  Lock_time: 0.000135 Rows_sent: 633  Rows_examined: 1266
+use goalcoll_wrd1;
+SET timestamp=1394833246;
+SELECT * FROM wp_blazegiantsposts wposts
+  WHERE wposts.post_status = 'publish' AND wposts.post_type = 'page' 
+  ORDER BY wposts.post_modified DESC LIMIT 0,1000
+
+# Fri Mar 14 15:40:46 2014
+# Query_time: 1.233542  Lock_time: 0.000145 Rows_sent: 675  Rows_examined: 9742
+SET timestamp=1394833246;
+SELECT post_modified FROM wp_blazegiantsposts WHERE post_status = 'publish' ORDER BY post_modified DESC
+

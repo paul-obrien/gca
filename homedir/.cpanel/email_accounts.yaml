@@ -1,0 +1,21 @@
+--- 
+__version: '2.1'
+goalcollegeathlete.com: 
+  account_count: 4
+  accounts: 
+    info: 
+      disk_mtime: '1394209595'
+      diskused: 306943
+    julia: 
+      disk_mtime: '1394209595'
+      diskused: 0
+    questions: 
+      disk_mtime: '1394209595'
+      diskquota: 262144000
+      diskused: 0
+    steve: 
+      disk_mtime: '1394209595'
+      diskused: 0
+  disk_mtime: '1394209595'
+  passwd_mtime: '1394209595'
+  quota_mtime: '1394209595'

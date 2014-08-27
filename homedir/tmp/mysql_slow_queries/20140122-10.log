@@ -1,0 +1,24 @@
+# Wed Jan 22 10:03:38 2014
+# Query_time: 2.058815  Lock_time: 0.000153 Rows_sent: 610  Rows_examined: 1220
+use goalcoll_wrd1;
+SET timestamp=1390410218;
+SELECT   wp_blazegiantsposts.* FROM wp_blazegiantsposts  WHERE 1=1  AND wp_blazegiantsposts.post_type = 'page' AND (wp_blazegiantsposts.post_status = 'publish' OR wp_blazegiantsposts.post_status = 'future' OR wp_blazegiantsposts.post_status = 'draft' OR wp_blazegiantsposts.post_status = 'pending' OR wp_blazegiantsposts.post_status = 'private')  ORDER BY wp_blazegiantsposts.menu_order,wp_blazegiantsposts.post_title asc
+
+# Wed Jan 22 10:11:15 2014
+# Query_time: 1.441483  Lock_time: 0.027091 Rows_sent: 29  Rows_examined: 1178
+use goalcoll_wrd1;
+SET timestamp=1390410675;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+
+# Wed Jan 22 10:15:25 2014
+# Query_time: 4.005758  Lock_time: 0.000118 Rows_sent: 29  Rows_examined: 1178
+use goalcoll_wrd1;
+SET timestamp=1390410925;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+

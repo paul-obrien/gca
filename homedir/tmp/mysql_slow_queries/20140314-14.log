@@ -1,0 +1,18 @@
+# Fri Mar 14 14:41:02 2014
+# Query_time: 1.656139  Lock_time: 0.000073 Rows_sent: 0  Rows_examined: 11
+use goalcoll_wrd1;
+SET timestamp=1394829662;
+SELECT ID FROM wp_blazegiantsposts WHERE post_parent = 1855 AND post_type = 'page' AND post_status = 'publish' LIMIT 1
+
+# Fri Mar 14 14:44:35 2014
+# Query_time: 1.505788  Lock_time: 0.000141 Rows_sent: 633  Rows_examined: 633
+use goalcoll_wrd1;
+SET timestamp=1394829875;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_blazegiantsposts.post_date DESC
+
+# Fri Mar 14 14:54:07 2014
+# Query_time: 1.478504  Lock_time: 0.000120 Rows_sent: 633  Rows_examined: 633
+use goalcoll_wrd1;
+SET timestamp=1394830447;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY wp_blazegiantsposts.post_date DESC
+

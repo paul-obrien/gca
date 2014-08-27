@@ -1,0 +1,196 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Andreas Breitschopp <a-breitschopp@ab-tools.com>
+# http://www.ab-weblog.com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Facebook, Twitter & Google+ Social Widgets\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-15 16:38+0100\n"
+"PO-Revision-Date: 2011-11-02 18:12+0900\n"
+"Last-Translator: redcocker <masa153@gmail.com>\n"
+"Language-Team: redcocker\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: SWAdmin.php:6
+msgid "Social Widgets Options"
+msgstr "ソーシャル・ウィジェットの設定"
+
+#: SWAdmin.php:36
+#: SWAdmin.php:39
+#: SWAdmin.php:46
+#: SWAdmin.php:49
+msgid "Error while saving options."
+msgstr "設定の保存中にエラーが発生しました。"
+
+#: SWAdmin.php:37
+msgid "Please make sure that each position for a widget is only chosen once!"
+msgstr "「各ソーシャル・ウィジェットの表示順」に重複がないことを確認して下さい。"
+
+#: SWAdmin.php:40
+msgid "At least one widget needs to be displayed!"
+msgstr "少なくとも１つのウィジェットの表示が必要です。「各ソーシャル・ウィジェットの表示順」を確認して下さい。"
+
+#: SWAdmin.php:47
+msgid "The widgets need to be displayed at least on one page!"
+msgstr "ウィジェットは、少なくとも１つのページで表示させる必要があります。「ソーシャル・ウィジェットを表示するページ」を確認して下さい。"
+
+#: SWAdmin.php:50
+msgid "The widgets need to be displayed either above the posts, below them or both!"
+msgstr "ウィジェットは、投稿の上、投稿の下、または両方で表示させる必要があります。「ソーシャル・ウィジェットの表示位置」を確認して下さい。"
+
+#: SWAdmin.php:71
+msgid "Options saved."
+msgstr "設定を保存しました。"
+
+#: SWAdmin.php:82
+#, php-format
+msgid "If you like this plug-in, please <a href=\"%s\">consider a donation</a> to keep it free. Thank you!"
+msgstr "このプラグインが気に入りましたら、どうか、<a href=\"%s\">作者への寄付</a>をご検討下さい。"
+
+#: SWAdmin.php:133
+msgid "Display Order of Social Widgets"
+msgstr "各ソーシャル・ウィジェットの表示順"
+
+#: SWAdmin.php:140
+msgid "Facebook:"
+msgstr "Facebook:"
+
+#: SWAdmin.php:143
+#: SWAdmin.php:154
+#: SWAdmin.php:165
+msgid "Don't display"
+msgstr "表示しない"
+
+#: SWAdmin.php:144
+#: SWAdmin.php:155
+#: SWAdmin.php:166
+msgid "Position 1"
+msgstr "1番目"
+
+#: SWAdmin.php:145
+#: SWAdmin.php:156
+#: SWAdmin.php:167
+msgid "Position 2"
+msgstr "2番目"
+
+#: SWAdmin.php:146
+#: SWAdmin.php:157
+#: SWAdmin.php:168
+msgid "Position 3"
+msgstr "3番目"
+
+#: SWAdmin.php:151
+msgid "Twitter:"
+msgstr "Twitter:"
+
+#: SWAdmin.php:162
+msgid "Google+:"
+msgstr "Google+:"
+
+#: SWAdmin.php:178
+msgid "Display social widgets on these pages"
+msgstr "ソーシャル・ウィジェットを表示するページ"
+
+#: SWAdmin.php:186
+msgid "Posts"
+msgstr "投稿"
+
+#: SWAdmin.php:187
+msgid "Pages"
+msgstr "固定ページ"
+
+#: SWAdmin.php:188
+msgid "Homepage"
+msgstr "ホーム"
+
+#: SWAdmin.php:189
+msgid "Categories"
+msgstr "カテゴリーページ"
+
+#: SWAdmin.php:190
+msgid "Tags"
+msgstr "タグページ"
+
+#: SWAdmin.php:191
+msgid "Taxonomies"
+msgstr "タクソノミーページ"
+
+#: SWAdmin.php:192
+msgid "Dates"
+msgstr "日付別ページ"
+
+#: SWAdmin.php:193
+msgid "Authors"
+msgstr "作成者ページ"
+
+#: SWAdmin.php:194
+msgid "Searches"
+msgstr "検索結果"
+
+#: SWAdmin.php:195
+msgid "Attachments"
+msgstr "添付ファイルページ"
+
+#: SWAdmin.php:197
+msgid "Tip: Don't display the social widgets on pages with excerpts as this leads to broken code."
+msgstr "注意: コードの破壊の原因となりますので、抜粋の一覧が表示されるページでは、ソーシャル・ウィジェットを表示しないで下さい。"
+
+#: SWAdmin.php:206
+msgid "Display position of social widgets"
+msgstr "ソーシャル・ウィジェットの表示位置"
+
+#: SWAdmin.php:214
+msgid "Display social widgets above posts"
+msgstr "投稿の上に表示"
+
+#: SWAdmin.php:215
+msgid "Display social widgets below posts"
+msgstr "投稿の下に表示"
+
+#: SWAdmin.php:224
+msgid "Other Settings"
+msgstr "その他の設定"
+
+#: SWAdmin.php:231
+msgid "Additional CSS styles applied to whole widget box:"
+msgstr "ウィジェット全体にの追加のCSSを適用する。"
+
+#: SWAdmin.php:232
+msgid "(e. g. \"margin-bottom:20px\")"
+msgstr "(例: \"margin-bottom:20px\")"
+
+#: SWAdmin.php:235
+msgid "Additional CSS styles applied to every widget:"
+msgstr "各ウィジェットにの追加のCSSを適用する。"
+
+#: SWAdmin.php:236
+msgid "(e. g. \"margin-right:10px\")"
+msgstr "(例: \"margin-right:10px\")"
+
+#: SWAdmin.php:239
+msgid "Support this free plug-in with a small powered by link at your page footer. Thank you!"
+msgstr "フッターに小さな「powered by」リンクを表示して、このフリーのプラグインを応援する"
+
+#: SWAdmin.php:246
+msgid "Save options"
+msgstr "設定を保存"
+
+#: SWAdmin.php:267
+msgid "Settings"
+msgstr "設定"
+
+#: SWOutput.php:70
+msgid "Tweet"
+msgstr "ツイート"
+
+#~ msgid "Display social widgets on post pages"
+#~ msgstr "Social Widgets auf Artikelseiten anzeigen"

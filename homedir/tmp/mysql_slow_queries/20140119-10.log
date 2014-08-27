@@ -1,0 +1,6 @@
+# Sun Jan 19 10:40:06 2014
+# Query_time: 20.958052  Lock_time: 0.000125 Rows_sent: 1  Rows_examined: 1
+use goalcoll_wrd1;
+SET timestamp=1390153206;
+SELECT option_value FROM wp_blazegiantsoptions WHERE option_name = 'uninstall_plugins' LIMIT 1
+

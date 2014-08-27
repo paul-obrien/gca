@@ -1,0 +1,15 @@
+# Sat Feb 22 21:34:15 2014
+# Query_time: 1.389487  Lock_time: 0.000112 Rows_sent: 0  Rows_examined: 8
+use goalcoll_wrd1;
+SET timestamp=1393130055;
+UPDATE `wp_blazegiantspostmeta` SET `meta_value` = '1393130053:1' WHERE `post_id` = 2767 AND `meta_key` = '_edit_lock'
+
+# Sat Feb 22 21:38:59 2014
+# Query_time: 3.219083  Lock_time: 0.000141 Rows_sent: 29  Rows_examined: 1216
+use goalcoll_wrd1;
+SET timestamp=1393130339;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+

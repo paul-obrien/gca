@@ -1,0 +1,9 @@
+# Fri Feb 14 04:48:45 2014
+# Query_time: 1.465727  Lock_time: 0.162375 Rows_sent: 29  Rows_examined: 1216
+use goalcoll_wrd1;
+SET timestamp=1392378525;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+

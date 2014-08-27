@@ -1,0 +1,24 @@
+# Thu Jan 16 03:07:19 2014
+# Query_time: 2.319590  Lock_time: 0.000156 Rows_sent: 598  Rows_examined: 1196
+use goalcoll_wrd1;
+SET timestamp=1389866839;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+
+# Thu Jan 16 03:18:37 2014
+# Query_time: 2.102557  Lock_time: 0.000140 Rows_sent: 598  Rows_examined: 1196
+use goalcoll_wrd1;
+SET timestamp=1389867517;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+
+# Thu Jan 16 03:22:44 2014
+# Query_time: 1.687461  Lock_time: 0.000135 Rows_sent: 598  Rows_examined: 1196
+use goalcoll_wrd1;
+SET timestamp=1389867764;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+
+# Thu Jan 16 03:31:33 2014
+# Query_time: 4.109724  Lock_time: 0.000128 Rows_sent: 598  Rows_examined: 1196
+use goalcoll_wrd1;
+SET timestamp=1389868293;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+

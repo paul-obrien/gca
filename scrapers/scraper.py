@@ -6,6 +6,10 @@ import urllib
 from urllib.parse import urljoin
 from urllib.error import HTTPError
 from pyquery import PyQuery as pq
+import constants
+import html.parser
+
+h = html.parser.HTMLParser()
 
 config = {
     'user' : 'fpuser',
@@ -13,6 +17,117 @@ config = {
     'host' : 'localhost',
     'database' : 'gca'
     }
+
+sports = { "Acrobatics & Tumbling" : constants.ACROBATICS,
+           "Alpine Skiing" : [constants.MENS_SKIING, constants.WOMENS_SKIING],
+           "Baseball" : constants.BASEBALL,
+           "BASEBALL" : constants.BASEBALL,
+           "Basketball (M)" : constants.MENS_BASKETBALL,
+           "Basketball (W)" : constants.WOMENS_BASKETBALL,
+           "Basketball - Men's" : constants.MENS_BASKETBALL,
+           "Basketball - Women's" : constants.WOMENS_BASKETBALL,
+           "Bowling" : constants.WOMENS_BOWLING,
+           "Cheerleader / Dance" : constants.CHEERLEADING,
+           "Cheerleading" : constants.CHEERLEADING,
+           "Cross Country" : [constants.MENS_CROSS_COUNTRY, constants.WOMENS_CROSS_COUNTRY],
+           "CROSS COUNTRY (Men and Women)" : [constants.MENS_CROSS_COUNTRY, constants.WOMENS_CROSS_COUNTRY],
+           "Cross Country - Women's" : constants.WOMENS_CROSS_COUNTRY,
+           "Equestrian" : constants.EQUESTRIAN,
+           "Equestrian Engling" : constants.EQUESTRIAN,
+           "Equestrian Western" : constants.EQUESTRIAN,
+           "Field Hockey" : constants.FIELD_HOCKEY,
+           "Football" : constants.FOOTBALL,
+           "FOOTBALL" : constants.FOOTBALL,
+           "Golf" : [constants.MENS_GOLF, constants.WOMENS_GOLF],
+           "Golf (M)" : constants.MENS_GOLF,
+           "Golf (W)" : constants.WOMENS_GOLF,
+           "Golf - Men's" : constants.MENS_GOLF,
+           "Gymnastics" : constants.GYMNASTICS,
+           "Lacrosse (W)" : constants.WOMENS_LACROSSE,
+           "Men's and Women's Cross Country" : [constants.MENS_CROSS_COUNTRY, constants.WOMENS_CROSS_COUNTRY],
+           "Men's and Women's Cross-Country" : [constants.MENS_CROSS_COUNTRY, constants.WOMENS_CROSS_COUNTRY],
+           "Men's and Women's Fencing" : [constants.MENS_FENCING, constants.WOMENS_FENCING],
+           "Men's and Women's Golf" : [constants.MENS_GOLF, constants.WOMENS_GOLF],
+           "Men's and Women's Swimming": [constants.MENS_SWIMMING_DIVING, constants.WOMENS_SWIMMING_DIVING],
+           "Men's and Women's Swimming & Diving": [constants.MENS_SWIMMING_DIVING, constants.WOMENS_SWIMMING_DIVING],
+           "Men's and Women's Tennis" : [constants.MENS_TENNIS, constants.WOMENS_TENNIS],
+           "Men's and Women's Track" : [constants.MENS_TRACK_FIELD, constants.WOMENS_TRACK_FIELD],
+           "Men's and Women's Track and Field" : [constants.MENS_TRACK_FIELD, constants.WOMENS_TRACK_FIELD],
+           "Men's and Women's Track and Field/Cross Country" : [constants.MENS_TRACK_FIELD, constants.WOMENS_TRACK_FIELD, constants.MENS_CROSS_COUNTRY, constants.WOMENS_CROSS_COUNTRY],
+           "Men's and Women's Track & Field" : [constants.MENS_TRACK_FIELD, constants.WOMENS_TRACK_FIELD],
+           "Men's & Women's Cross Country" : [constants.MENS_CROSS_COUNTRY, constants.WOMENS_CROSS_COUNTRY],
+           "Men's & Women's Golf" : [constants.MENS_GOLF, constants.WOMENS_GOLF],
+           "Men's & Women's Swimming": [constants.MENS_SWIMMING_DIVING, constants.WOMENS_SWIMMING_DIVING],
+           "Men's & Women's Swimming and Diving": [constants.MENS_SWIMMING_DIVING, constants.WOMENS_SWIMMING_DIVING],
+           "Men's & Women's Tennis" : [constants.MENS_TENNIS, constants.WOMENS_TENNIS],
+           "Men's & Women's Track and Field" : [constants.MENS_TRACK_FIELD, constants.WOMENS_TRACK_FIELD],
+           "Men's & Women's Track & Field" : [constants.MENS_TRACK_FIELD, constants.WOMENS_TRACK_FIELD],
+           "Men's & Women's Track & Field/Cross Country" : [constants.MENS_TRACK_FIELD, constants.WOMENS_TRACK_FIELD, constants.MENS_CROSS_COUNTRY, constants.WOMENS_CROSS_COUNTRY],
+           "Men's Basketball" : constants.MENS_BASKETBALL,
+           "MEN'S BASKETBALL" : constants.MENS_BASKETBALL,
+           "Men's Crew" : constants.MENS_ROWING,
+           "Men's Cross Country" : constants.MENS_CROSS_COUNTRY,
+           "Men's Fencing" : constants.MENS_FENCING,
+           "Men's Golf" : constants.MENS_GOLF,
+           "Men's Hockey" : constants.MENS_ICE_HOCKEY,
+           "Men's Ice Hockey" : constants.MENS_ICE_HOCKEY,
+           "Men's Indoor & Outdoor Track" : constants.MENS_TRACK_FIELD,
+           "Men's Lacrosse" : constants.MENS_LACROSSE,
+           "Men's Soccer" : constants.MENS_SOCCER,
+           "Men's Squash" : constants.MENS_SQUASH,
+           "Men's Swimming" : constants.MENS_SWIMMING_DIVING,
+           "Men's Swimming and Diving" : constants.MENS_SWIMMING_DIVING,
+           "Men's Swimming & Diving" : constants.MENS_SWIMMING_DIVING,
+           "Men's Tennis" : constants.MENS_TENNIS,
+           "Men's Track" : constants.MENS_TRACK_FIELD,
+           "Men's Track and Field" : constants.MENS_TRACK_FIELD,
+           "Men's Volleyball" : constants.MENS_VOLLEYBALL,
+           "Nordic Skiing" : [constants.MENS_NORDIC_SKIING, constants.WOMENS_NORDIC_SKIING],
+           "Riding" : constants.EQUESTRIAN,
+           "Rowing" : [constants.MENS_ROWING, constants.WOMENS_ROWING],
+           "Soccer (M)" : constants.MENS_SOCCER,
+           "Soccer (W)" : constants.WOMENS_SOCCER,
+           "Soccer - Women's" : constants.WOMENS_SOCCER,
+           "Softball" : constants.SOFTBALL,
+           "Spirit Squad" : constants.CHEERLEADING,
+           "Squash" : [constants.MENS_SQUASH, constants.WOMENS_SQUASH],
+           "Swimming and Diving" : [constants.MENS_SWIMMING_DIVING, constants.WOMENS_SWIMMING_DIVING],
+           "Swimming & Diving (M)" : constants.MENS_SWIMMING_DIVING,
+           "Swimming & Diving (W)" : constants.WOMENS_SWIMMING_DIVING,
+           "Tennis - Men's" : constants.MENS_TENNIS,
+           "Tennis - Women's" : constants.WOMENS_TENNIS,
+           "Track and Field" : [constants.MENS_TRACK_FIELD, constants.WOMENS_TRACK_FIELD],
+           "Track and Field - Men's" : constants.MENS_TRACK_FIELD,
+           "Track and Field - Women's" : constants.WOMENS_TRACK_FIELD,
+           "Track & Field" : [constants.MENS_TRACK_FIELD, constants.WOMENS_TRACK_FIELD],
+           "TRACK & FIELD (Men and Women)" : [constants.MENS_TRACK_FIELD, constants.WOMENS_TRACK_FIELD],
+           "Volleyball" : constants.WOMENS_VOLLEYBALL,
+           "Women's Basketball" : constants.WOMENS_BASKETBALL,
+           "WOMEN'S BASKETBALL" : constants.WOMENS_BASKETBALL,
+           "Women's Bowling" : constants.WOMENS_BOWLING,
+           "Women's Crew" : constants.WOMENS_ROWING,
+           "Women's Cross Country" : constants.WOMENS_CROSS_COUNTRY,
+           "Women's Fencing" : constants.WOMENS_FENCING,
+           "Women's Field Hockey" : constants.FIELD_HOCKEY,
+           "Women's Golf" : constants.WOMENS_GOLF,
+           "Women's Hockey" : constants.WOMENS_ICE_HOCKEY,
+           "Women's Ice Hockey" : constants.WOMENS_ICE_HOCKEY,
+           "Women's Indoor & Outdoor Track" : constants.WOMENS_TRACK_FIELD,
+           "Women's Lacrosse" : constants.WOMENS_LACROSSE,
+           "Women's Rowing" : constants.WOMENS_ROWING,
+           "Women's Soccer" : constants.WOMENS_SOCCER,
+           "WOMEN'S SOFTBALL" : constants.SOFTBALL,
+           "Women's Squash" : constants.WOMENS_SQUASH,
+           "Women's Swimming" : constants.WOMENS_SWIMMING_DIVING,
+           "Women's Swimming and Diving" : constants.WOMENS_SWIMMING_DIVING,
+           "Women's Swimming & Diving" : constants.WOMENS_SWIMMING_DIVING,
+           "Women's Tennis" : constants.WOMENS_TENNIS,
+           "Women's Track" : constants.WOMENS_TRACK_FIELD,
+           "Women's Track and Field" : constants.WOMENS_TRACK_FIELD,
+           "Women's Track & Field" : constants.WOMENS_TRACK_FIELD,
+           "Women's Volleyball" : constants.WOMENS_VOLLEYBALL,
+           "WOMEN'S VOLLEYBALL" : constants.WOMENS_VOLLEYBALL,
+           "Wrestling" : constants.WRESTLING }
 
 def get_connection():
     try:
@@ -165,6 +280,7 @@ def parse_row(cxn, college, base_url, sport, elements, field_names, custom_param
         return info
 
 def scrape_asp_site(college_name, sports, fields=["name", "title", "email", "phone"], custom_params=None):
+    print(college_name);
     cxn = get_connection()
     college = get_college(cxn, college_name)
     try:
@@ -203,13 +319,16 @@ def scrape_asp_site(college_name, sports, fields=["name", "title", "email", "pho
 def default_get_table(header):
     return header.next()
 
-def scrape_roster_row_site(college_name, sports, header_tag, fields=["name", "title", "email", "phone"], custom_params=None, get_table=default_get_table):
+def default_get_finder(header_tag, key):
+    return header_tag + ':contains("' + key + '")'
+
+def scrape_roster_row_site(college_name, sports, header_tag, fields=["name", "title", "email", "phone"],
+                           custom_params=None, get_table=default_get_table, get_finder=default_get_finder):
     cxn = get_connection()
     college = get_college(cxn, college_name)
     d = pq(url=college[1])
     for key, sport in sports.items():
-        print (sport);
-        finder = header_tag + ':contains("' + key + '")'
+        finder = get_finder(header_tag, key)
         header = d(finder)
         tables = get_table(header)
         coaches = tables("tr[class^='roster-row']")
@@ -218,6 +337,31 @@ def scrape_roster_row_site(college_name, sports, header_tag, fields=["name", "ti
 
     close_connection(cxn)
 
+def scrape_view_article_site(college_name, sports):
+    cxn = get_connection()
+    college = get_college(cxn, college_name)
+    d = pq(url=college[1])
+    for key, sport in sports.items():
+        header = d('strong:contains("' + key + '")')
+        if header:
+            if header.length > 1:
+                header = d('strong:contains("' + key + '")').filter(lambda i: strip_string(this.text) == key)
+            current_element = header
+            while not current_element.is_('tr'):
+                current_element = current_element.parent()
+            info_row = current_element.next()
+            while len(info_row.children()) > 1:
+                parse_row(cxn, college[0], college[1], sport, info_row.children(), ["name", "title", "phone", "email"])
+                info_row = info_row.next()
+
+    close_connection(cxn)
+
+def html_decode_email(email):
+  email = h.unescape(email)
+  if 'mailto:' in email:
+      email = email.split('"')[1][7:]
+  return email
+  
 def massage_data(info, params):
     if 'phone_prefix' in params and 'phone' in info and info['phone']:
         info['phone'] = params['phone_prefix'] + info['phone']
@@ -234,6 +378,11 @@ def massage_data(info, params):
         for key, value in info.items():
             if value:
                 info[key] = value.replace(params['remove_chars'], '')
+    if 'shorten_title' in params:
+        info['title'] = info['title'].split('(')[0]
+    if 'html_decode_email' in params and info['email']:
+        info['email'] = html_decode_email(info['email'])
+        
     
 
     

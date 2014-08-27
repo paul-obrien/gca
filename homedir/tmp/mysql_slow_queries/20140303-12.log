@@ -1,0 +1,6 @@
+# Mon Mar  3 12:00:17 2014
+# Query_time: 1.037075  Lock_time: 0.000134 Rows_sent: 1  Rows_examined: 1
+use goalcoll_wrd1;
+SET timestamp=1393873217;
+SHOW TABLES LIKE 'wp_blazegiantsebd_item'
+

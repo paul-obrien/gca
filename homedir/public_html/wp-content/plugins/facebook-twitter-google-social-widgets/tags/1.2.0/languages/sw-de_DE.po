@@ -1,0 +1,191 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Andreas Breitschopp <a-breitschopp@ab-tools.com>
+# http://www.ab-weblog.com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Facebook, Twitter & Google+ Social Widgets\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-12 16:31+0100\n"
+"PO-Revision-Date: 2011-10-12 16:33+0100\n"
+"Last-Translator: Andreas Breitschopp <a-breitschopp@ab-tools.com>\n"
+"Language-Team: Andreas Breitschopp <a-breitschopp@ab-tools.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+
+#: SWAdmin.php:6
+msgid "Social Widgets Options"
+msgstr "Optionen von Social Widgets"
+
+#: SWAdmin.php:35
+#: SWAdmin.php:38
+#: SWAdmin.php:45
+#: SWAdmin.php:48
+msgid "Error while saving options."
+msgstr "Fehler beim Speichern der Optionen."
+
+#: SWAdmin.php:36
+msgid "Please make sure that each position for a widget is only chosen once!"
+msgstr "Bitte stellen Sie sicher, dass jede Position für ein Widget nur einmal gewählt wurde!"
+
+#: SWAdmin.php:39
+msgid "At least one widget needs to be displayed!"
+msgstr "Mindestens ein Widget muss angezeigt werden!"
+
+#: SWAdmin.php:46
+msgid "The widgets need to be displayed at least on one page!"
+msgstr "Die Widgets müssen mindestens auf einer Seite angezeigt werden!"
+
+#: SWAdmin.php:49
+msgid "The widgets need to be displayed either above the posts, below them or both!"
+msgstr "Die Widgets müssen entweder oberhalb der Artikel, unterhalb dieser oder an beiden Position angezeigt werden!"
+
+#: SWAdmin.php:69
+msgid "Options saved."
+msgstr "Optionen gespeichert."
+
+#: SWAdmin.php:80
+#, php-format
+msgid "If you like this plug-in, please <a href=\"%s\">consider a donation</a> to keep it free. Thank you!"
+msgstr "Wenn Ihnen dieses Plug-In gefällt, <a href=\"%s\">erwägen Sie bitte eine Spende</a>, damit es kostenlos bleibt. Vielen Dank!"
+
+#: SWAdmin.php:129
+msgid "Display Order of Social Widgets"
+msgstr "Anzeigereihenfolge der Social Widgets"
+
+#: SWAdmin.php:136
+msgid "Facebook:"
+msgstr "Facebook:"
+
+#: SWAdmin.php:139
+#: SWAdmin.php:150
+#: SWAdmin.php:161
+msgid "Don't display"
+msgstr "Nicht anzeigen"
+
+#: SWAdmin.php:140
+#: SWAdmin.php:151
+#: SWAdmin.php:162
+msgid "Position 1"
+msgstr "Position 1"
+
+#: SWAdmin.php:141
+#: SWAdmin.php:152
+#: SWAdmin.php:163
+msgid "Position 2"
+msgstr "Position 2"
+
+#: SWAdmin.php:142
+#: SWAdmin.php:153
+#: SWAdmin.php:164
+msgid "Position 3"
+msgstr "Position 3"
+
+#: SWAdmin.php:147
+msgid "Twitter:"
+msgstr "Twitter:"
+
+#: SWAdmin.php:158
+msgid "Google+:"
+msgstr "Google+:"
+
+#: SWAdmin.php:174
+msgid "Display social widgets on these pages"
+msgstr "Social Widgets auf diesen Seiten anzeigen"
+
+#: SWAdmin.php:182
+msgid "Posts"
+msgstr "Artikeln"
+
+#: SWAdmin.php:183
+msgid "Pages"
+msgstr "Seiten"
+
+#: SWAdmin.php:184
+msgid "Homepage"
+msgstr "Startseite"
+
+#: SWAdmin.php:185
+msgid "Categories"
+msgstr "Kategorien"
+
+#: SWAdmin.php:186
+msgid "Tags"
+msgstr "Schlagwörtern"
+
+#: SWAdmin.php:187
+msgid "Taxonomies"
+msgstr "Taxonomien"
+
+#: SWAdmin.php:188
+msgid "Dates"
+msgstr "Daten"
+
+#: SWAdmin.php:189
+msgid "Authors"
+msgstr "Autoren"
+
+#: SWAdmin.php:190
+msgid "Searches"
+msgstr "Suchen"
+
+#: SWAdmin.php:191
+msgid "Attachments"
+msgstr "Anhänge"
+
+#: SWAdmin.php:193
+msgid "Tip: Don't display the social widgets on pages with excerpts as this leads to broken code."
+msgstr "Tipp: Zeigen Sie keine Social Widgets auf Seiten mit Textausschnitten an, da dies zu fehlerhaftem Quelltext führt."
+
+#: SWAdmin.php:202
+msgid "Display position of social widgets"
+msgstr "Anzeigeposition der Social Widgets"
+
+#: SWAdmin.php:210
+msgid "Display social widgets above posts"
+msgstr "Social Widgets oberhalb Artikel anzeigen"
+
+#: SWAdmin.php:211
+msgid "Display social widgets below posts"
+msgstr "Social Widgets unterhalb Artikel anzeigen"
+
+#: SWAdmin.php:220
+msgid "Other Settings"
+msgstr "Weitere Einstellungen"
+
+#: SWAdmin.php:227
+msgid "Additional CSS styles applied to whole widget box:"
+msgstr "Zusätzliche CSS-Styles, die auf die gesamte Widget-Box angewendet werden:"
+
+#: SWAdmin.php:228
+msgid "(e. g. \"margin-bottom:20px\")"
+msgstr "(z. B. \"margin-bottom:20px\")"
+
+#: SWAdmin.php:231
+msgid "Additional CSS styles applied to every widget:"
+msgstr "Zusätzliche CSS-Styles, die auf jedes einzelne Widget angewendet werden:"
+
+#: SWAdmin.php:232
+msgid "(e. g. \"margin-right:10px\")"
+msgstr "(z. B. \"margin-right:10px\")"
+
+#: SWAdmin.php:239
+msgid "Save options"
+msgstr "Optionen speichern"
+
+#: SWAdmin.php:260
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: SWOutput.php:69
+msgid "Tweet"
+msgstr "Twittern"
+
+#~ msgid "Display social widgets on post pages"
+#~ msgstr "Social Widgets auf Artikelseiten anzeigen"

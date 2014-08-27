@@ -1,0 +1,6 @@
+# Sun Feb  2 21:16:35 2014
+# Query_time: 4.430686  Lock_time: 0.000182 Rows_sent: 611  Rows_examined: 1222
+use goalcoll_wrd1;
+SET timestamp=1391400995;
+SELECT * FROM wp_blazegiantsposts  WHERE (post_type = 'page' AND post_status = 'publish')     ORDER BY menu_order,wp_blazegiantsposts.post_title ASC
+

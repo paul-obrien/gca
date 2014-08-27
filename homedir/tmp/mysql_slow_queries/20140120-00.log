@@ -1,0 +1,8 @@
+# Mon Jan 20 00:08:18 2014
+# Query_time: 1.330241  Lock_time: 0.001659 Rows_sent: 1  Rows_examined: 1
+use goalcoll_wrd1;
+SET timestamp=1390201698;
+SHOW COLUMNS
+  FROM wp_blazegiantsebd_link
+  LIKE 'selected_id'
+

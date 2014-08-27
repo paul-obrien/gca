@@ -1,0 +1,6 @@
+# Sun Mar 16 16:44:26 2014
+# Query_time: 1.117200  Lock_time: 0.000139 Rows_sent: 9  Rows_examined: 18
+use goalcoll_wrd1;
+SET timestamp=1395009866;
+SELECT post_id, meta_key, meta_value FROM wp_blazegiantspostmeta WHERE post_id IN (1626) ORDER BY meta_id ASC
+

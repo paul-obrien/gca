@@ -1,0 +1,67 @@
+# Wed Jan 29 20:17:53 2014
+# Query_time: 1.387069  Lock_time: 0.050241 Rows_sent: 29  Rows_examined: 1198
+use goalcoll_wrd1;
+SET timestamp=1391051873;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+
+# Wed Jan 29 20:18:00 2014
+# Query_time: 2.170518  Lock_time: 0.757095 Rows_sent: 1  Rows_examined: 1
+use goalcoll_wrd1;
+SET timestamp=1391051880;
+SHOW COLUMNS
+  FROM wp_blazegiantsebd_link
+  LIKE 'selected_id'
+
+# Wed Jan 29 20:18:04 2014
+# Query_time: 1.187373  Lock_time: 0.068792 Rows_sent: 25  Rows_examined: 16080
+use goalcoll_wrd1;
+SET timestamp=1391051884;
+SELECT option_name, option_value FROM wp_blazegiantsoptions WHERE option_name LIKE '%cunjoshare_%'
+
+# Wed Jan 29 20:30:49 2014
+# Query_time: 764.646072  Lock_time: 446.604677 Rows_sent: 0  Rows_examined: 0
+use goalcoll_wrd1;
+SET timestamp=1391052649;
+SELECT DISTINCT meta_value
+		FROM wp_blazegiantsposts p, wp_blazegiantspostmeta pm
+		WHERE p.post_status!='auto-draft' AND p.ID=pm.post_id AND pm.meta_key='_sidebar_name'
+		ORDER BY pm.meta_value ASC
+
+# Wed Jan 29 20:30:59 2014
+# Query_time: 777.207920  Lock_time: 0.000061 Rows_sent: 0  Rows_examined: 9
+use goalcoll_wrd1;
+SET timestamp=1391052659;
+UPDATE `wp_blazegiantspostmeta` SET `meta_value` = '1391051881:1' WHERE `post_id` = 11252 AND `meta_key` = '_edit_lock'
+
+# Wed Jan 29 20:33:48 2014
+# Query_time: 1.064478  Lock_time: 0.000000 Rows_sent: 0  Rows_examined: 0
+use goalcoll_wrd1;
+SET timestamp=1391052828
+
+# Wed Jan 29 20:37:23 2014
+# Query_time: 215.715301  Lock_time: 14.484119 Rows_sent: 694  Rows_examined: 16080
+use goalcoll_wrd1;
+SET timestamp=1391053043;
+SELECT option_name, option_value FROM wp_blazegiantsoptions WHERE autoload = 'yes'
+
+# Wed Jan 29 20:42:27 2014
+# Query_time: 95.309140  Lock_time: 63.565227 Rows_sent: 1  Rows_examined: 1
+use goalcoll_wrd1;
+SET timestamp=1391053347;
+SELECT option_value FROM wp_blazegiantsoptions WHERE option_name = 'uninstall_plugins' LIMIT 1
+
+# Wed Jan 29 20:44:14 2014
+# Query_time: 96.565707  Lock_time: 58.345264 Rows_sent: 0  Rows_examined: 0
+use goalcoll_wrd1;
+SET timestamp=1391053454;
+SELECT option_value FROM wp_blazegiantsoptions WHERE option_name = 'bwp_gxs_google_news' LIMIT 1
+
+# Wed Jan 29 20:47:45 2014
+# Query_time: 54.082810  Lock_time: 41.872042 Rows_sent: 1  Rows_examined: 1
+use goalcoll_wrd1;
+SET timestamp=1391053665;
+SHOW TABLES LIKE 'wp_blazegiantsebd_item'
+

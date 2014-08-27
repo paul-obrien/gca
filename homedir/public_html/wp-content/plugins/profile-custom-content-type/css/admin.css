@@ -1,0 +1,161 @@
+/**
+ * Displayed on Profile CCT's settings page. (across all tabs)
+ */
+.nav-tab-wrapper span {
+	padding-right: 5px;
+	padding-left: 20px;
+	color:#AAA;
+	font-size: 12px;
+}
+
+.ui-tabs-nav a:focus {
+    outline: none;
+}
+
+#col-left {
+    float: left;
+    overflow: hidden;
+	margin: 0;
+    padding: 0;
+}
+
+#col-right {
+	float: left;
+	margin: 0 10px 0 0;
+	max-width: 150px;
+}
+
+#col-middle {
+    float: left;
+	margin: 0;
+    padding: 0;
+	width: 77%;
+	max-width: 960px;
+}
+
+.preview-shell > .context-shell {
+	float: left;
+	width: 68%;
+}
+
+#side-shell {
+	float: right;
+	width: 31%;
+}
+
+#side-shell .avatar {
+	width: 100%;
+	height: auto;
+	max-width: 150px;
+    margin-left: 3px;
+}
+
+#tabs .ui-tabs-nav {
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    height: 27px;
+	border-bottom: 1px solid #CCCCCC;
+    white-space: nowrap;
+}
+
+#tabs .nav-tabs-wrapper {
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+#notify {
+	float: left;
+    margin-top: -43px;
+    margin-left: 230px;
+    height: 30px;
+}
+
+#notify span {
+    position: relative;
+    top: 5px;
+	display: none;
+    margin-bottom: 18px;
+    padding: 7px 15px;
+    border: 1px #FCEEC1 solid;
+    border-radius: 4px;
+    background-color: #FDF5D9;
+    color: #404040;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+#notify img {
+	position: relative;
+	top: 3px;
+}
+
+.info {
+	padding: 5px;
+	border-radius: 4px;
+	background: #EAF2FA;
+}
+
+.info em {
+	font-size: 12px;
+}
+
+.profile-cct-shell {
+	float: left;
+    clear: both;
+    width: 98%;
+    max-width: 649px;
+}
+
+.update-profiles {
+	padding: 20px 10px;
+}
+
+.profile-version {
+	clear: both;
+	margin-top: 10px;
+	color: #AAA;
+	text-align: right;
+}
+
+#update-profiles-slider {
+	display: none;
+	padding: 20px 10px;
+	overflow: hidden;
+	background: #FCFCFC;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+#update-profiles-slider .slider-shell {
+	border: 1px solid #CCC;
+	background: #FFF;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	overflow: hidden;
+	width: 150px;
+	height: 12px;
+	float: left;
+	margin-right: 10px;
+}
+
+#update-profiles-slider .slider-shell div {
+	height: 12px;
+	background: #CCC;
+}
+
+#update-profiles-slider.active-slider {
+	display: block;
+}
+
+.close:hover {
+	opacity: 0.8;
+}
+
+tr.disabled td {
+    color: #BBBBBB;
+}
+
+#mce_fullscreen_add_media {
+    display: none;
+}

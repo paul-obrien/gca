@@ -1,0 +1,70 @@
+head	1.4;
+access;
+symbols;
+locks
+	goalcoll:1.4; strict;
+comment	@# @;
+
+
+1.4
+date	2013.12.08.18.58.44;	author goalcoll;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2011.06.11.15.29.08;	author goalcoll;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2011.06.11.15.25.30;	author goalcoll;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2011.06.11.15.23.50;	author goalcoll;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@"Modified by /usr/local/cpanel/cpanel "
+@
+text
+@steve:$1$Fzt2530L$42HU3SdNe0QL7lMroJrYN/:15136::::::
+julia:$1$7A_Z99bv$/dJ2pt2OFYys0mXV0vC5X/:15136::::::
+info:$1$0nhN5gT5$hAYAmCPyQK461rNeg4KCG/:15136::::::
+questions:$1$vPuNcZsD$7/D7sEyVFoOIJG5D4R0oS/:16047::::::
+@
+
+
+1.3
+log
+@"Modified by /usr/local/cpanel/cpanel "
+@
+text
+@d4 1
+@
+
+
+1.2
+log
+@"Modified by /usr/local/cpanel/cpanel "
+@
+text
+@d3 1
+@
+
+
+1.1
+log
+@"Modified by /usr/local/cpanel/cpanel "
+@
+text
+@d2 1
+@

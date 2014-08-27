@@ -1,0 +1,6 @@
+# Wed Mar 12 05:17:52 2014
+# Query_time: 1.128968  Lock_time: 0.000208 Rows_sent: 1  Rows_examined: 657
+use goalcoll_wrd1;
+SET timestamp=1394623072;
+SELECT post_modified_gmt FROM wp_blazegiantsposts WHERE post_status = 'publish' AND post_type IN ('post', 'page', 'attachment') ORDER BY post_modified_gmt DESC LIMIT 1
+
